@@ -19,10 +19,21 @@ schema-version: v2.2
 dd-service: guild-mcp-quill
 team: writers
 description: Public Writers Guild living-world feed and floor event service.
-type: service
+type: web
+application: citadel-guilds
+tier: "2"
 lifecycle: development
 languages:
   - typescript
+contacts:
+  - name: Citadel Nexus Inc.
+    type: email
+    contact: support@citadel-nexus.com
+links:
+  - name: Repository
+    type: repo
+    provider: github
+    url: https://github.com/citadel-nexus/guild-writers
 tags:
   - seat:quill
   - guild:writers

@@ -1,5 +1,5 @@
 # ─── CGRF Header ──────────────────────────────
-# File:        .github/CODEOWNERS
+# File:        .bits/out/DISP-AUTOMATION-writers/memory.json.cgrf.yaml
 # Stage:       11_COMMIT
 # SRS:         SRS-CN-WRITERS-AUTOMATION-001
 # CAPS:        pending
@@ -8,11 +8,12 @@
 # Seat:        BITS-CODEGEN
 # Owner:       Citadel Nexus Inc.
 # Created:     2026-09-25
-# Depends:     none
+# Depends:     .bits/out/DISP-AUTOMATION-writers/memory.json
 # EnumType:    ConfigDoc
-# EnumEdges:   OWNS *
-# DAG Node:    writers.github.codeowners
-# Intent:      Route Writers Guild changes to the guild team for review.
+# EnumEdges:   DEPENDS_ON .bits/out/DISP-AUTOMATION-writers/memory.json
+# DAG Node:    writers.automation.memory.payload
+# Intent:      Govern the JSON payload that records the automation dispatch provenance and outcomes.
 # ───────────────────────────────────────────────
 
-* @citadel-nexus/writers-guild
+artifact: .bits/out/DISP-AUTOMATION-writers/memory.json
+comment_format: sibling
