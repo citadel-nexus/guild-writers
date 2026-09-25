@@ -1,0 +1,21 @@
+# ─── CGRF Header ──────────────────────────────
+# File:        .gitignore
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-WRITERS-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-writers
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     package.json, tsconfig.json, vitest.config.ts
+# EnumType:    ConfigDoc
+# EnumEdges:   DEPENDS_ON package.json; DEPENDS_ON tsconfig.json; DEPENDS_ON vitest.config.ts
+# DAG Node:    writers.repository.ignore
+# Intent:      Keep generated dependencies, builds, and coverage evidence out of source control.
+# ──────────────────────────────────────────────
+
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo

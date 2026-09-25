@@ -1,0 +1,43 @@
+# ─── CGRF Header ──────────────────────────────
+# File:        .bits/agents/quill.yml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-WRITERS-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-writers
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     .bits/agents/governance.yml, src/routes/health.ts
+# EnumType:    ConfigDoc
+# EnumEdges:   DEPENDS_ON .bits/agents/governance.yml; PRODUCES citadel.writers.activity; PRODUCES citadel.writers.quest; PRODUCES citadel.writers.champion
+# DAG Node:    writers.agent.quill
+# Intent:      Bound Quill to the minimum public Writers Guild capabilities and subjects required by the SRS.
+# ──────────────────────────────────────────────
+
+api_version: citadel-nexus.com/v1
+kind: AgentSeat
+metadata:
+  seat_name: quill
+  guild: writers
+spec:
+  authority_level: dispatch_scoped
+  capabilities:
+    - read_public_lore
+    - observe_lore_compilation
+    - update_public_floor_state
+    - emit_public_floor_events
+  cannot:
+    - write_without_authorized_dispatch
+    - access_private_sources
+    - publish_outside_declared_subjects
+    - expose_tenant_or_personal_data
+  nats_subjects:
+    publish:
+      - citadel.writers.activity
+      - citadel.writers.quest
+      - citadel.writers.champion
+    subscribe: []
+  escalation_target: USO_MCP
+  health_check_endpoint: /health
+  failure_default: quiet_floor

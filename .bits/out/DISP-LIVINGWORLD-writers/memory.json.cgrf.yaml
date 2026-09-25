@@ -1,0 +1,19 @@
+# ─── CGRF Header ──────────────────────────────
+# File:        .bits/out/DISP-LIVINGWORLD-writers/memory.json.cgrf.yaml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-WRITERS-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-writers
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     .bits/out/DISP-LIVINGWORLD-writers/memory.json
+# EnumType:    ConfigDoc
+# EnumEdges:   DEPENDS_ON .bits/out/DISP-LIVINGWORLD-writers/memory.json
+# DAG Node:    writers.memory.payload
+# Intent:      Govern the JSON payload that records the living-world dispatch provenance and outcomes.
+# ──────────────────────────────────────────────
+
+artifact: .bits/out/DISP-LIVINGWORLD-writers/memory.json
+comment_format: sibling
