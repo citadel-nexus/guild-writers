@@ -10,3 +10,16 @@ SRS-CN-WRITERS-LIVINGWORLD-001:
   notes: >
     Public contract for the writers floor of the Aincrad living world — the
     citadel.writers.* events + /realm/writers.json feed the game reads. Public-safe only.
+
+SRS-CN-WRITERS-AUTOMATION-001:
+  ep: GUILD-AUTOMATION-001
+  status: in_progress
+  phase: "Writers guild — CI visibility, catalog, PostHog, and build/review automation"
+  paths:
+    - service.datadog.yaml
+    - .env.example
+    - .github/workflows/ci.yml
+    - .github/CODEOWNERS
+  notes: >
+    Enable Datadog CI Visibility, fix service catalog entry, document PostHog
+    environment variables, and add CODEOWNERS for PR review automation.
