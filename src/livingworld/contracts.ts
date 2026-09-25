@@ -8,9 +8,9 @@
 // Seat:        BITS-CODEGEN
 // Owner:       Citadel Nexus Inc.
 // Created:     2026-09-25
-// Depends:     .bits/srs/SRS-CN-WRITERS-LIVINGWORLD-001.md
+// Depends:     .bits/srs/SRS-CN-WRITERS-LIVINGWORLD-001.md, src/livingworld/progression.ts
 // EnumType:    Schema
-// EnumEdges:   EXTENDS SRS-CN-WRITERS-LIVINGWORLD-001; PRODUCES citadel.writers.activity; PRODUCES citadel.writers.quest; PRODUCES citadel.writers.champion
+// EnumEdges:   EXTENDS SRS-CN-WRITERS-LIVINGWORLD-001; CONSUMES src/livingworld/progression.ts; PRODUCES citadel.writers.activity; PRODUCES citadel.writers.quest; PRODUCES citadel.writers.champion
 // DAG Node:    writers.livingworld.contracts
 // Intent:      Define one public-safe schema for the Writers floor feeds and required NATS events.
 // ──────────────────────────────────────────────
@@ -27,6 +27,7 @@ export const WRITERS_SUBJECTS = Object.freeze({
 
 export type ChampionState = 'idle' | 'working' | 'blocked';
 export type QuestState = 'open' | 'closed';
+export type ClientSurface = 'realm' | 'mobile';
 
 export interface PublicQuest {
   id: string;
@@ -36,7 +37,7 @@ export interface PublicQuest {
 
 export interface RealmStructure {
   kind: 'hall';
-  level: 1;
+  level: 1 | 2 | 3 | 4 | 5;
 }
 
 export interface WritersRealmFeed {

@@ -24,6 +24,7 @@ export default defineConfig({
       provider: 'v8',
       include: [
         'src/automation/livingworld-emitter.ts',
+        'src/integrations/**/*.ts',
         'src/livingworld/**/*.ts',
         'src/routes/**/*.ts',
         'src/server.ts',

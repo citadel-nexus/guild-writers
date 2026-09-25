@@ -8,9 +8,9 @@
 // Seat:        BITS-CODEGEN
 // Owner:       Citadel Nexus Inc.
 // Created:     2026-09-25
-// Depends:     src/livingworld/contracts.ts
+// Depends:     src/livingworld/contracts.ts, src/livingworld/progression.ts
 // EnumType:    Service
-// EnumEdges:   CONSUMES src/livingworld/contracts.ts; PRODUCES src/routes/realm.ts; PRODUCES src/routes/party.ts
+// EnumEdges:   CONSUMES src/livingworld/contracts.ts; CONSUMES src/livingworld/progression.ts; PRODUCES src/routes/realm.ts; PRODUCES src/routes/party.ts
 // DAG Node:    writers.livingworld.state
 // Intent:      Preserve only validated public floor state and default missing sources to a quiet floor.
 // ──────────────────────────────────────────────
@@ -24,6 +24,12 @@ import {
   type WritersPartyFeed,
   type WritersRealmFeed,
 } from './contracts.js';
+import {
+  normalizeProgressionMetrics,
+  structureLevelFor,
+  type ProgressionMetrics,
+  type StructureLevel,
+} from './progression.js';
 
 const PUBLIC_ID_PATTERN = /^[A-Za-z0-9][A-Za-z0-9._:-]{0,127}$/;
 const CHAMPION_STATES = new Set<ChampionState>(['idle', 'working', 'blocked']);
@@ -69,6 +75,8 @@ function normalizeQuest(change: QuestChange): PublicQuest | null {
 export class LivingWorldState {
   private activityLevel = QUIET_ACTIVITY_LEVEL;
   private championState: ChampionState = 'idle';
+  private structureLevel: StructureLevel = 1;
+  private progression: ProgressionMetrics = normalizeProgressionMetrics({});
   private readonly quests = new Map<string, PublicQuest>();
 
   /** Apply a source-derived heartbeat, falling back to quiet for missing input. */
@@ -107,6 +115,20 @@ export class LivingWorldState {
     return { changed, value: next };
   }
 
+  /** Replace progression counters with a sanitized source snapshot. */
+  updateProgression(value: Partial<ProgressionMetrics>): StateChange<StructureLevel> {
+    this.progression = normalizeProgressionMetrics(value);
+    const next = structureLevelFor(this.progression);
+    const changed = next !== this.structureLevel;
+    this.structureLevel = next;
+    return { changed, value: next };
+  }
+
+  /** Return the sanitized progression counters used for structure growth. */
+  progressionMetrics(): ProgressionMetrics {
+    return { ...this.progression };
+  }
+
   /** Return the non-secret floor snapshot consumed by the game. */
   realmFeed(): WritersRealmFeed {
     return {
@@ -116,7 +138,7 @@ export class LivingWorldState {
       quests: [...this.quests.values()]
         .sort((left, right) => left.id.localeCompare(right.id))
         .map((quest) => ({ ...quest })),
-      structures: [{ kind: 'hall', level: 1 }],
+      structures: [{ kind: 'hall', level: this.structureLevel }],
     };
   }
 

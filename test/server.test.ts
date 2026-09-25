@@ -21,8 +21,9 @@ import type {
   OutgoingHttpHeaders,
   ServerResponse,
 } from 'node:http';
+import { Readable } from 'node:stream';
 
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 
 import {
   LivingWorldFloor,
@@ -30,7 +31,8 @@ import {
   type FloorTelemetry,
 } from '../src/automation/livingworld-emitter.js';
 import { LivingWorldState } from '../src/livingworld/state.js';
-import { createWritersRequestHandler } from '../src/server.js';
+import type { N8nWebhookHandler } from '../src/routes/n8n.js';
+import { createWritersRequestHandler, type WritersServerOptions } from '../src/server.js';
 
 const publisher: FloorEventPublisher = {
   available: false,
@@ -88,10 +90,14 @@ async function makeRequest(
   method: string,
   url: string,
   floor: LivingWorldFloor = new LivingWorldFloor(new LivingWorldState(), publisher, telemetry),
+  headers: IncomingHttpHeaders = {},
+  options: WritersServerOptions = {},
+  body = '',
 ): Promise<MemoryResult> {
-  const handler = createWritersRequestHandler(floor);
+  const handler = createWritersRequestHandler(floor, options);
   return new Promise<MemoryResult>((resolve) => {
-    const request = { method, url, headers: {} as IncomingHttpHeaders } as IncomingMessage;
+    const request = Readable.from(body.length === 0 ? [] : [body]) as IncomingMessage;
+    Object.assign(request, { method, url, headers });
     const response = new MemoryResponse(resolve) as unknown as ServerResponse;
     handler(request, response);
   });
@@ -110,6 +116,21 @@ describe('Writers public HTTP service', () => {
       quests: [],
       structures: [{ kind: 'hall', level: 1 }],
     });
+  });
+
+  it('tracks mobile realm engagement from the public client header', async () => {
+    const floor = new LivingWorldFloor(new LivingWorldState(), publisher, telemetry);
+    const engagement = vi.spyOn(floor, 'recordEngagement');
+
+    const response = await makeRequest(
+      'GET',
+      '/realm/writers.json',
+      floor,
+      { 'x-citadel-client': 'mobile' },
+    );
+
+    expect(response.status).toBe(200);
+    expect(engagement).toHaveBeenCalledWith('mobile');
   });
 
   it('binds Quill in the game party feed', async () => {
@@ -192,5 +213,37 @@ describe('Writers public HTTP service', () => {
 
     expect(writeResponse.status).toBe(405);
     expect(missingResponse.status).toBe(404);
+  });
+
+  it('forwards n8n request bodies and fails soft when the webhook is not configured', async () => {
+    const received: Array<{ body: string; headers: IncomingHttpHeaders }> = [];
+    const webhook: N8nWebhookHandler = {
+      async handle(body, headers) {
+        received.push({ body, headers });
+        return { status: 202, body: { accepted: true } };
+      },
+    };
+
+    const accepted = await makeRequest(
+      'POST',
+      '/webhooks/n8n',
+      undefined,
+      { 'x-citadel-signature': 'signature' },
+      { n8n: webhook },
+      '{"event_type":"activity"}',
+    );
+    const unavailable = await makeRequest('POST', '/webhooks/n8n');
+
+    expect(accepted).toMatchObject({ status: 202, body: { accepted: true } });
+    expect(received).toEqual([
+      {
+        body: '{"event_type":"activity"}',
+        headers: { 'x-citadel-signature': 'signature' },
+      },
+    ]);
+    expect(unavailable).toMatchObject({
+      status: 503,
+      body: { error: 'webhook_not_configured' },
+    });
   });
 });

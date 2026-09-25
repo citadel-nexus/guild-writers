@@ -1,0 +1,28 @@
+# ─── CGRF Header ──────────────────────────────
+# File:        sbom.json.cgrf.yaml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-WRITERS-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-writers
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     sbom.json, package-lock.json
+# EnumType:    Schema
+# EnumEdges:   VALIDATES sbom.json; DEPENDS_ON package-lock.json
+# DAG Node:    writers.sbom.governance
+# Intent:      Attach governance provenance to the generated CycloneDX dependency and vulnerability inventory.
+# ──────────────────────────────────────────────
+
+artifact: sbom.json
+format: CycloneDX
+spec_version: "1.6"
+generation:
+  source: package-lock.json
+  reproducible: true
+vulnerability_audit:
+  command: npm audit --offline --json
+  known_total: 0
+  scope: all_resolved_dependencies
+  completed_at: "2026-09-25"

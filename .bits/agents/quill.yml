@@ -10,7 +10,7 @@
 # Created:     2026-09-25
 # Depends:     .bits/agents/governance.yml, src/routes/health.ts
 # EnumType:    ConfigDoc
-# EnumEdges:   DEPENDS_ON .bits/agents/governance.yml; PRODUCES citadel.writers.activity; PRODUCES citadel.writers.quest; PRODUCES citadel.writers.champion
+# EnumEdges:   DEPENDS_ON .bits/agents/governance.yml; PRODUCES citadel.writers.activity; PRODUCES citadel.writers.quest; PRODUCES citadel.writers.champion; PRODUCES citadel.guild.comms.writers→creator; PRODUCES citadel.guild.comms.writers→finance; PRODUCES citadel.creator.subguild.writers.status
 # DAG Node:    writers.agent.quill
 # Intent:      Bound Quill to the minimum public Writers Guild capabilities and subjects required by the SRS.
 # ──────────────────────────────────────────────
@@ -27,6 +27,8 @@ spec:
     - observe_lore_compilation
     - update_public_floor_state
     - emit_public_floor_events
+    - consume_sanitized_source_signals
+    - emit_public_cross_guild_messages
   cannot:
     - write_without_authorized_dispatch
     - access_private_sources
@@ -37,6 +39,9 @@ spec:
       - citadel.writers.activity
       - citadel.writers.quest
       - citadel.writers.champion
+      - citadel.guild.comms.writers→creator
+      - citadel.guild.comms.writers→finance
+      - citadel.creator.subguild.writers.status
     subscribe: []
   escalation_target: USO_MCP
   health_check_endpoint: /health
