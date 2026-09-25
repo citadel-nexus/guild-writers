@@ -1,0 +1,52 @@
+# ─── CGRF Header ───────────────────────────────
+# File:        .bits/agents/governance.yml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-WRITERS-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-writers
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     .bits/queue/DISP-LIVINGWORLD-writers.md, .bits/agents/quill.yml
+# EnumType:    ConfigDoc
+# EnumEdges:   GATES .bits/agents/quill.yml; DEPENDS_ON .bits/queue/DISP-LIVINGWORLD-writers.md
+# DAG Node:    writers.agent.governance
+# Intent:      Make every agent action deterministic, dispatch-scoped, public-safe, and fail-closed.
+# ──────────────────────────────────────────────
+
+version: 1
+default_authority: deny
+fail_closed: true
+authorization:
+  dispatch_required: true
+  accepted_dispatch_statuses:
+    - ready
+    - in_progress
+  require_srs_registry_match: true
+  require_branch_match: true
+  autonomous_writes: denied
+public_safety:
+  allow:
+    - aggregate_activity
+    - public_quest_state
+    - champion_state
+  deny:
+    - credentials
+    - private_paths
+    - tenant_material
+    - personally_identifiable_information
+escalation:
+  target: USO_MCP
+  on:
+    - missing_dispatch
+    - unauthorized_subject
+    - private_data_risk
+    - unavailable_required_source
+execution:
+  missing_source: quiet_floor
+  invalid_input: reject_event
+  telemetry_failure: continue_without_telemetry
+  nats_failure: retain_local_public_state
+roster:
+  - .bits/agents/quill.yml

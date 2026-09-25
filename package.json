@@ -1,16 +1,28 @@
 {
   "name": "@citadel-guilds/writers",
   "version": "0.1.0",
+  "private": true,
   "type": "module",
-  "main": "dist/index.js",
+  "main": "dist/src/index.js",
   "scripts": {
     "build": "tsc",
     "dev": "tsx watch src/index.ts",
-    "test": "vitest run",
-    "lint": "eslint src/"
+    "test": "vitest run --coverage",
+    "lint": "tsc --noEmit --pretty false"
   },
   "dependencies": {
-    "@citadel-guilds/sdk": "^0.1.0",
-    "nats": "^2.19.0"
+    "dd-trace": "^5.65.0",
+    "hot-shots": "^11.2.0",
+    "nats": "^2.29.3"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@vitest/coverage-v8": "^5.0.2",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "vitest": "^5.0.2"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }

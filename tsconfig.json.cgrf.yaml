@@ -1,0 +1,19 @@
+# ─── CGRF Header ──────────────────────────────
+# File:        tsconfig.json.cgrf.yaml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-WRITERS-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-writers
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     tsconfig.json
+# EnumType:    ConfigDoc
+# EnumEdges:   VALIDATES tsconfig.json
+# DAG Node:    writers.typescript.config
+# Intent:      Govern the JSON TypeScript configuration that validates the public living-world service.
+# ──────────────────────────────────────────────
+
+artifact: tsconfig.json
+comment_format: sibling

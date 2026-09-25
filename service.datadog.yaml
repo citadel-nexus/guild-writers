@@ -1,0 +1,30 @@
+# ─── CGRF Header ──────────────────────────────
+# File:        service.datadog.yaml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-WRITERS-LIVINGWORLD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-LIVINGWORLD-writers
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-09-25
+# Depends:     src/telemetry/datadog.ts
+# EnumType:    ConfigDoc
+# EnumEdges:   OWNS guild-mcp-quill; DEPENDS_ON src/telemetry/datadog.ts
+# DAG Node:    writers.datadog.catalog
+# Intent:      Register Quill's public Writers Guild service with stable ownership and telemetry tags.
+# ──────────────────────────────────────────────
+
+schema-version: v2.2
+dd-service: guild-mcp-quill
+team: writers
+description: Public Writers Guild living-world feed and floor event service.
+type: service
+lifecycle: development
+languages:
+  - typescript
+tags:
+  - seat:quill
+  - guild:writers
+  - surface:public
+  - srs:SRS-CN-WRITERS-LIVINGWORLD-001
