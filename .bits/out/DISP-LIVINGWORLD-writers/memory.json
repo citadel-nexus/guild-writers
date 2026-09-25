@@ -1,104 +1,2683 @@
 {
   "vectors": [
-    {"type":"A","file_path":".bits/agents/governance.yml","cket_stage":"11_COMMIT","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"ConfigDoc","functions":[],"dependencies":[".bits/queue/DISP-LIVINGWORLD-writers.md",".bits/agents/quill.yml"],"lines":52,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Make every agent action deterministic, dispatch-scoped, public-safe, and fail-closed.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":".bits/agents/quill.yml","cket_stage":"11_COMMIT","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"ConfigDoc","functions":[],"dependencies":[".bits/agents/governance.yml","src/routes/health.ts"],"lines":43,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Bound Quill to the minimum public Writers Guild capabilities and subjects required by the SRS.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":".bits/queue/DISP-LIVINGWORLD-writers.md","cket_stage":"11_COMMIT","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"ConfigDoc","functions":[],"dependencies":[".bits/srs/SRS-CN-WRITERS-LIVINGWORLD-001.md"],"lines":10,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Authorize the Writers living-world work under the queued dispatch supplied by the operator.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":".env.example","cket_stage":"11_COMMIT","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"ConfigDoc","functions":[],"dependencies":["src/index.ts","src/telemetry/datadog.ts","src/telemetry/mobile-rum.ts"],"lines":33,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Document only the runtime values used by the public service and mobile telemetry adapters.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":".gitignore","cket_stage":"11_COMMIT","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"ConfigDoc","functions":[],"dependencies":["package.json","tsconfig.json","vitest.config.ts"],"lines":21,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Keep generated dependencies, builds, and coverage evidence out of source control.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"package.json","cket_stage":"11_COMMIT","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"ConfigDoc","functions":[],"dependencies":["dd-trace","hot-shots","nats","vitest"],"lines":28,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Declare the public service runtime, telemetry, typecheck, build, and test toolchain.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"package-lock.json","cket_stage":"11_COMMIT","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"ConfigDoc","functions":[],"dependencies":["package.json"],"lines":2588,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Lock the audited Node dependency graph used to build and verify the Writers service.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"package-lock.json.cgrf.yaml","cket_stage":"11_COMMIT","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"ConfigDoc","functions":[],"dependencies":["package-lock.json","package.json"],"lines":19,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Govern the reproducible dependency graph used to validate and run the public service.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"service.datadog.yaml","cket_stage":"11_COMMIT","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"ConfigDoc","functions":[],"dependencies":["src/telemetry/datadog.ts"],"lines":30,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Register Quill's public Writers Guild service with stable ownership and telemetry tags.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"src/automation/livingworld-emitter.ts","cket_stage":"07_BUILD","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"Service","functions":["connectFloorPublisher","LivingWorldFloor"],"dependencies":["src/livingworld/contracts.ts","src/livingworld/state.ts","nats"],"lines":206,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Publish real Writers floor transitions while keeping NATS failures non-fatal.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"src/index.ts","cket_stage":"07_BUILD","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"Service","functions":["servicePort","main"],"dependencies":["src/server.ts","src/automation/livingworld-emitter.ts","src/telemetry/datadog.ts"],"lines":69,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Start the public Writers floor service with fail-soft NATS and Datadog integrations.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"src/livingworld/contracts.ts","cket_stage":"07_BUILD","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"Schema","functions":[],"dependencies":[".bits/srs/SRS-CN-WRITERS-LIVINGWORLD-001.md"],"lines":82,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Define one public-safe schema for the Writers floor feeds and required NATS events.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"src/livingworld/state.ts","cket_stage":"07_BUILD","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"Service","functions":["LivingWorldState"],"dependencies":["src/livingworld/contracts.ts"],"lines":139,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Preserve only validated public floor state and default missing sources to a quiet floor.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"src/routes/health.ts","cket_stage":"07_BUILD","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"Route","functions":["healthCheck"],"dependencies":["src/automation/livingworld-emitter.ts"],"lines":40,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Report healthy or quiet service mode without exposing connection details.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"src/routes/party.ts","cket_stage":"07_BUILD","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"Route","functions":["getWritersParty"],"dependencies":["src/automation/livingworld-emitter.ts"],"lines":24,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Bind Quill as the public Writers floor guildmaster avatar.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"src/routes/realm.ts","cket_stage":"07_BUILD","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"Route","functions":["getWritersRealm"],"dependencies":["src/automation/livingworld-emitter.ts"],"lines":24,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Expose the cleansed Writers floor snapshot consumed by the public game.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"src/server.ts","cket_stage":"07_BUILD","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"Service","functions":["createWritersRequestHandler"],"dependencies":["src/routes/health.ts","src/routes/realm.ts","src/routes/party.ts"],"lines":93,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Serve only the public GET contracts required by the Writers living-world floor.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"src/telemetry/datadog.ts","cket_stage":"07_BUILD","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"Service","functions":["NoopFloorTelemetry","createFloorTelemetry"],"dependencies":["dd-trace","hot-shots","src/automation/livingworld-emitter.ts"],"lines":156,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Trace floor operations and report source-derived Writers metrics without blocking service work.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"src/telemetry/mobile-rum.ts","cket_stage":"07_BUILD","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"Service","functions":["createMobileRumConfiguration","initializeMobileRum"],"dependencies":["service.datadog.yaml"],"lines":92,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Configure mobile app vitals from runtime values while disabling RUM when identifiers are absent.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"test/livingworld.test.ts","cket_stage":"08_TEST","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"Test","functions":[],"dependencies":["src/automation/livingworld-emitter.ts","src/livingworld/state.ts"],"lines":226,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Prove floor state and events reflect validated inputs and remain quiet on unavailable sources.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"test/server.test.ts","cket_stage":"08_TEST","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"Test","functions":[],"dependencies":["src/server.ts","src/routes/realm.ts","src/routes/party.ts"],"lines":196,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Verify the public realm and Quill party contracts over their exact HTTP paths.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"test/telemetry.test.ts","cket_stage":"08_TEST","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"Test","functions":[],"dependencies":["src/telemetry/datadog.ts","src/telemetry/mobile-rum.ts"],"lines":150,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Verify telemetry is environment-gated and never blocks living-world behavior.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"tsconfig.json","cket_stage":"11_COMMIT","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"ConfigDoc","functions":[],"dependencies":["package.json"],"lines":29,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Enable strict deterministic TypeScript builds for the public living-world service.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"tsconfig.json.cgrf.yaml","cket_stage":"11_COMMIT","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"ConfigDoc","functions":[],"dependencies":["tsconfig.json"],"lines":19,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Govern the JSON TypeScript configuration that validates the public living-world service.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":"vitest.config.ts","cket_stage":"08_TEST","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"ConfigDoc","functions":[],"dependencies":["package.json","tsconfig.json"],"lines":41,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Enforce repeatable living-world tests and minimum coverage for new public contracts.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"success","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":".bits/out/DISP-LIVINGWORLD-writers/memory.json","cket_stage":"11_COMMIT","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"ConfigDoc","functions":[],"dependencies":[".bits/out/DISP-LIVINGWORLD-writers/memory.json.cgrf.yaml"],"lines":104,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Persist substantive file, relationship, and verification provenance for the living-world dispatch.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"stored","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-    {"type":"A","file_path":".bits/out/DISP-LIVINGWORLD-writers/memory.json.cgrf.yaml","cket_stage":"11_COMMIT","srs_codes":["SRS-CN-WRITERS-LIVINGWORLD-001"],"enum_type":"ConfigDoc","functions":[],"dependencies":[".bits/out/DISP-LIVINGWORLD-writers/memory.json"],"lines":19,"caps_grade":"pending","ck_stamp":"pending","intent_statement":"Govern the JSON payload that records the living-world dispatch provenance and outcomes.","objective_id":"DISP-LIVINGWORLD-writers","outcome":"stored","supersedes":false,"dispatch_id":"DISP-LIVINGWORLD-writers","seat":"BITS-CODEGEN","domain":"engineering","source_type":"seat_dispatch","tags":["DISP-LIVINGWORLD-writers","BITS-CODEGEN","SRS-CN-WRITERS-LIVINGWORLD-001","living-world"],"tenant_id":null},
-
-    {"type":"B","source":".bits/agents/governance.yml","target":".bits/agents/quill.yml","edge_type":"GATES","weight":1.0,"description":"Agent governance gates the Quill seat configuration.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":".bits/agents/governance.yml","target":".bits/queue/DISP-LIVINGWORLD-writers.md","edge_type":"DEPENDS_ON","weight":1.0,"description":"Governance evaluates the active dispatch authorization.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":".bits/agents/quill.yml","target":".bits/agents/governance.yml","edge_type":"DEPENDS_ON","weight":1.0,"description":"Quill inherits deterministic agent governance.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":".bits/agents/quill.yml","target":"citadel.writers.activity","edge_type":"PRODUCES","weight":1.0,"description":"Quill may publish authorized activity heartbeats.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":".bits/agents/quill.yml","target":"citadel.writers.quest","edge_type":"PRODUCES","weight":1.0,"description":"Quill may publish authorized quest transitions.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":".bits/agents/quill.yml","target":"citadel.writers.champion","edge_type":"PRODUCES","weight":1.0,"description":"Quill may publish authorized champion transitions.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":".bits/queue/DISP-LIVINGWORLD-writers.md","target":"SRS-CN-WRITERS-LIVINGWORLD-001","edge_type":"GATES","weight":1.0,"description":"The ready dispatch authorizes this SRS implementation.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":".env.example","target":"src/index.ts","edge_type":"DEPENDS_ON","weight":0.9,"description":"Runtime service values configure the entrypoint.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":".env.example","target":"src/telemetry/datadog.ts","edge_type":"DEPENDS_ON","weight":0.9,"description":"Runtime Datadog values configure server telemetry.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":".env.example","target":"src/telemetry/mobile-rum.ts","edge_type":"DEPENDS_ON","weight":0.9,"description":"Runtime identifiers configure mobile RUM.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":".gitignore","target":"package.json","edge_type":"DEPENDS_ON","weight":0.7,"description":"Ignore rules cover generated package artifacts.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":".gitignore","target":"tsconfig.json","edge_type":"DEPENDS_ON","weight":0.7,"description":"Ignore rules cover TypeScript build output.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":".gitignore","target":"vitest.config.ts","edge_type":"DEPENDS_ON","weight":0.7,"description":"Ignore rules cover coverage output.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"package.json","target":"SRS-CN-WRITERS-LIVINGWORLD-001","edge_type":"DEPENDS_ON","weight":0.8,"description":"The package toolchain supports the SRS implementation.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"package-lock.json","target":"package.json","edge_type":"DEPENDS_ON","weight":1.0,"description":"The lockfile resolves the declared package graph.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"package-lock.json.cgrf.yaml","target":"package-lock.json","edge_type":"VALIDATES","weight":1.0,"description":"The CGRF sibling governs the JSON lockfile.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"package-lock.json.cgrf.yaml","target":"package.json","edge_type":"DEPENDS_ON","weight":0.9,"description":"The lock governance traces to package declarations.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"service.datadog.yaml","target":"guild-mcp-quill","edge_type":"OWNS","weight":1.0,"description":"The service catalog definition owns Quill's service identity.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"service.datadog.yaml","target":"src/telemetry/datadog.ts","edge_type":"DEPENDS_ON","weight":0.9,"description":"The catalog definition matches runtime telemetry.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/automation/livingworld-emitter.ts","target":"src/livingworld/state.ts","edge_type":"CONSUMES","weight":1.0,"description":"The emitter consumes validated public floor state.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/automation/livingworld-emitter.ts","target":"citadel.writers.activity","edge_type":"PRODUCES","weight":1.0,"description":"The emitter publishes activity heartbeats.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/automation/livingworld-emitter.ts","target":"citadel.writers.quest","edge_type":"PRODUCES","weight":1.0,"description":"The emitter publishes quest transitions.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/automation/livingworld-emitter.ts","target":"citadel.writers.champion","edge_type":"PRODUCES","weight":1.0,"description":"The emitter publishes Quill state transitions.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/index.ts","target":"src/server.ts","edge_type":"CONSUMES","weight":1.0,"description":"The entrypoint starts the public HTTP server.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/index.ts","target":"src/automation/livingworld-emitter.ts","edge_type":"CONSUMES","weight":1.0,"description":"The entrypoint creates the living-world floor runtime.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/index.ts","target":"src/telemetry/datadog.ts","edge_type":"CONSUMES","weight":1.0,"description":"The entrypoint initializes Datadog telemetry.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/livingworld/contracts.ts","target":"SRS-CN-WRITERS-LIVINGWORLD-001","edge_type":"EXTENDS","weight":1.0,"description":"TypeScript schemas realize the public SRS contract.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/livingworld/contracts.ts","target":"citadel.writers.activity","edge_type":"PRODUCES","weight":1.0,"description":"Contracts define the activity event shape.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/livingworld/contracts.ts","target":"citadel.writers.quest","edge_type":"PRODUCES","weight":1.0,"description":"Contracts define the quest event shape.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/livingworld/contracts.ts","target":"citadel.writers.champion","edge_type":"PRODUCES","weight":1.0,"description":"Contracts define the champion event shape.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/livingworld/state.ts","target":"src/livingworld/contracts.ts","edge_type":"CONSUMES","weight":1.0,"description":"State validates data against public schemas.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/livingworld/state.ts","target":"src/routes/realm.ts","edge_type":"PRODUCES","weight":1.0,"description":"State produces the realm route snapshot.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/livingworld/state.ts","target":"src/routes/party.ts","edge_type":"PRODUCES","weight":1.0,"description":"State produces Quill's party binding.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/routes/health.ts","target":"src/automation/livingworld-emitter.ts","edge_type":"CONSUMES","weight":0.9,"description":"Health reports emitter availability without connection data.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/routes/health.ts","target":".bits/agents/quill.yml","edge_type":"VALIDATES","weight":0.9,"description":"The health route satisfies Quill's declared endpoint.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/routes/party.ts","target":"src/automation/livingworld-emitter.ts","edge_type":"CONSUMES","weight":1.0,"description":"The party route reads the floor runtime.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/routes/party.ts","target":"/game/party.json","edge_type":"PRODUCES","weight":1.0,"description":"The route produces the Quill party feed.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/routes/realm.ts","target":"src/automation/livingworld-emitter.ts","edge_type":"CONSUMES","weight":1.0,"description":"The realm route reads the floor runtime.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/routes/realm.ts","target":"/realm/writers.json","edge_type":"PRODUCES","weight":1.0,"description":"The route produces the public Writers realm feed.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/server.ts","target":"src/routes/health.ts","edge_type":"CONSUMES","weight":1.0,"description":"The server mounts the public health route.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/server.ts","target":"src/routes/realm.ts","edge_type":"CONSUMES","weight":1.0,"description":"The server mounts the Writers realm route.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/server.ts","target":"src/routes/party.ts","edge_type":"CONSUMES","weight":1.0,"description":"The server mounts the Quill party route.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/telemetry/datadog.ts","target":"src/automation/livingworld-emitter.ts","edge_type":"CONSUMES","weight":1.0,"description":"Datadog telemetry consumes floor operation signals.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/telemetry/datadog.ts","target":"guild-mcp-quill","edge_type":"PRODUCES","weight":1.0,"description":"Telemetry produces signals under Quill's service identity.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/telemetry/mobile-rum.ts","target":"service.datadog.yaml","edge_type":"DEPENDS_ON","weight":0.9,"description":"Mobile RUM shares the service catalog identity.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"src/telemetry/mobile-rum.ts","target":"guild-mcp-quill","edge_type":"PRODUCES","weight":1.0,"description":"Mobile RUM produces vitals for Quill's service.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"test/livingworld.test.ts","target":"src/automation/livingworld-emitter.ts","edge_type":"VALIDATES","weight":1.0,"description":"Living-world tests validate event publication.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"test/livingworld.test.ts","target":"src/livingworld/state.ts","edge_type":"VALIDATES","weight":1.0,"description":"Living-world tests validate fail-soft public state.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"test/server.test.ts","target":"src/server.ts","edge_type":"VALIDATES","weight":1.0,"description":"Server tests validate HTTP status and fallback behavior.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"test/server.test.ts","target":"src/routes/realm.ts","edge_type":"VALIDATES","weight":1.0,"description":"Server tests validate the realm response.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"test/server.test.ts","target":"src/routes/party.ts","edge_type":"VALIDATES","weight":1.0,"description":"Server tests validate Quill's party binding.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"test/telemetry.test.ts","target":"src/telemetry/datadog.ts","edge_type":"VALIDATES","weight":1.0,"description":"Telemetry tests validate metrics and tracing fail-soft behavior.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"test/telemetry.test.ts","target":"src/telemetry/mobile-rum.ts","edge_type":"VALIDATES","weight":1.0,"description":"Telemetry tests validate mobile RUM configuration.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"tsconfig.json","target":"package.json","edge_type":"DEPENDS_ON","weight":0.9,"description":"TypeScript configuration uses the declared toolchain.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"tsconfig.json.cgrf.yaml","target":"tsconfig.json","edge_type":"VALIDATES","weight":1.0,"description":"The CGRF sibling governs TypeScript JSON configuration.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"vitest.config.ts","target":"src/livingworld/state.ts","edge_type":"VALIDATES","weight":0.9,"description":"Coverage configuration includes floor state.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":"vitest.config.ts","target":"src/automation/livingworld-emitter.ts","edge_type":"VALIDATES","weight":0.9,"description":"Coverage configuration includes event emission.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":".bits/out/DISP-LIVINGWORLD-writers/memory.json","target":".bits/out/DISP-LIVINGWORLD-writers/memory.json.cgrf.yaml","edge_type":"PRODUCES","weight":1.0,"description":"The memory payload is paired with JSON governance metadata.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-    {"type":"B","source":".bits/out/DISP-LIVINGWORLD-writers/memory.json.cgrf.yaml","target":".bits/out/DISP-LIVINGWORLD-writers/memory.json","edge_type":"DEPENDS_ON","weight":1.0,"description":"The JSON governance sibling identifies its memory payload.","dispatch_id":"DISP-LIVINGWORLD-writers","created_by":"BITS-CODEGEN"},
-
-    {"type":"C","event_type":"test_pass","file_path":null,"description":"Vitest passed 22 tests with 91.61% statements and 85.41% branches.","caps_before":null,"caps_after":null,"dag_impact":"Validated living-world, HTTP, Datadog, and mobile RUM nodes.","dispatch_id":"DISP-LIVINGWORLD-writers","timestamp":"2026-09-25T19:13:55Z","commit_sha":null,"smoke_result":"22/22"},
-    {"type":"C","event_type":"smoke_run","file_path":null,"description":"TypeScript lint, coverage tests, and production build completed successfully.","caps_before":null,"caps_after":null,"dag_impact":"Unblocked the SRS commit and review gates.","dispatch_id":"DISP-LIVINGWORLD-writers","timestamp":"2026-09-25T19:13:55Z","commit_sha":null,"smoke_result":"3/3"}
+    {
+      "type": "A",
+      "file_path": ".bits/agents/governance.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/queue/DISP-LIVINGWORLD-writers.md",
+        ".bits/agents/quill.yml"
+      ],
+      "lines": 52,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Make every agent action deterministic, dispatch-scoped, public-safe, and fail-closed.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/agents/quill.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/agents/governance.yml",
+        "src/routes/health.ts"
+      ],
+      "lines": 48,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Bound Quill to the minimum public Writers Guild capabilities and subjects required by the SRS.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/integration-checklist.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "src/integrations/coordinator.ts",
+        ".env.example"
+      ],
+      "lines": 48,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Make every external dependency, runtime prerequisite, health check, and fallback explicit.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-LIVINGWORLD-writers/memory.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/out/DISP-LIVINGWORLD-writers/memory.json.cgrf.yaml"
+      ],
+      "lines": 2683,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Persist substantive file, relationship, and verification provenance for the living-world dispatch.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-LIVINGWORLD-writers/memory.json.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/out/DISP-LIVINGWORLD-writers/memory.json"
+      ],
+      "lines": 19,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Govern the JSON payload that records the living-world dispatch provenance and outcomes.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "stored",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/progression.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "src/livingworld/progression.ts",
+        "src/integrations/coordinator.ts"
+      ],
+      "lines": 51,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Define auditable level thresholds that structures reach only from real guild outcomes.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/queue/DISP-LIVINGWORLD-writers.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/srs/SRS-CN-WRITERS-LIVINGWORLD-001.md"
+      ],
+      "lines": 10,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Authorize the Writers living-world work under the queued dispatch supplied by the operator.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".env.example",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "src/index.ts",
+        "src/telemetry/datadog.ts",
+        "src/telemetry/mobile-rum.ts",
+        "src/integrations/coordinator.ts"
+      ],
+      "lines": 63,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Document only the runtime values used by the public service and mobile telemetry adapters.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".gitignore",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "package.json",
+        "tsconfig.json",
+        "vitest.config.ts"
+      ],
+      "lines": 21,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Keep generated dependencies, builds, and coverage evidence out of source control.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "package-lock.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "package.json"
+      ],
+      "lines": 4978,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Lock the audited Node dependency graph used to build and verify the Writers service.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "package-lock.json.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "package-lock.json",
+        "package.json"
+      ],
+      "lines": 19,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Govern the reproducible dependency graph used to validate and run the public service.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "package.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "@supabase/supabase-js",
+        "dd-trace",
+        "hot-shots",
+        "nats",
+        "posthog-node",
+        "@cyclonedx/cyclonedx-npm",
+        "vitest"
+      ],
+      "lines": 31,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Declare the public service runtime, integrations, telemetry, SBOM, build, and test toolchain.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "sbom.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Schema",
+      "functions": [],
+      "dependencies": [
+        "package-lock.json",
+        "sbom.json.cgrf.yaml"
+      ],
+      "lines": 8441,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Catalog exact dependency versions, licenses, relationships, and known vulnerabilities in CycloneDX format.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "sbom.json.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Schema",
+      "functions": [],
+      "dependencies": [
+        "sbom.json",
+        "package-lock.json"
+      ],
+      "lines": 28,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Attach governance provenance to the generated CycloneDX dependency and vulnerability inventory.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "service.datadog.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "src/telemetry/datadog.ts"
+      ],
+      "lines": 30,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Register Quill's public Writers Guild service with stable ownership and telemetry tags.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/automation/livingworld-emitter.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Service",
+      "functions": [
+        "NoopFloorHooks",
+        "connectFloorPublisher",
+        "LivingWorldFloor"
+      ],
+      "dependencies": [
+        "src/livingworld/contracts.ts",
+        "src/livingworld/state.ts",
+        "src/livingworld/progression.ts",
+        "nats"
+      ],
+      "lines": 291,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Publish real Writers floor transitions while keeping NATS failures non-fatal.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/index.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Service",
+      "functions": [],
+      "dependencies": [
+        "src/server.ts",
+        "src/automation/livingworld-emitter.ts",
+        "src/telemetry/datadog.ts",
+        "src/integrations/coordinator.ts"
+      ],
+      "lines": 100,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Start the public Writers floor service with fail-soft NATS and Datadog integrations.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/coordinator.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Service",
+      "functions": [
+        "IntegrationCoordinator"
+      ],
+      "dependencies": [
+        "src/integrations/gitlab.ts",
+        "src/integrations/supabase.ts",
+        "src/integrations/posthog.ts",
+        "src/integrations/guild-comms.ts"
+      ],
+      "lines": 124,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Merge sanitized source snapshots into one deterministic floor state with circuit breaking.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/customerio.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Adapter",
+      "functions": [
+        "NoopCustomerIo",
+        "CustomerIoIntegration",
+        "createCustomerIoIntegration"
+      ],
+      "dependencies": [
+        "src/automation/livingworld-emitter.ts",
+        "src/integrations/posthog.ts"
+      ],
+      "lines": 201,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Send sanitized guild notifications and segments without transmitting raw member identifiers.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/gitlab.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Adapter",
+      "functions": [
+        "GitLabLoreBridge",
+        "NoopGitLabBridge",
+        "createGitLabLoreBridge"
+      ],
+      "dependencies": [
+        "src/integrations/sources.ts"
+      ],
+      "lines": 196,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Convert read-only private GitLab metadata into opaque quest and aggregate activity signals.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/guild-comms.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Adapter",
+      "functions": [
+        "GUILD_COMMS_SUBJECTS",
+        "GuildCommsBridge"
+      ],
+      "dependencies": [
+        "src/automation/livingworld-emitter.ts",
+        "src/integrations/posthog.ts"
+      ],
+      "lines": 156,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Publish and consume public-safe inter-guild handoffs with versioned message schemas.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/hooks.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Adapter",
+      "functions": [
+        "CompositeFloorHooks"
+      ],
+      "dependencies": [
+        "src/automation/livingworld-emitter.ts"
+      ],
+      "lines": 63,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Fan out floor side effects without allowing any integration failure to block core state.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/posthog.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Adapter",
+      "functions": [
+        "NoopPostHog",
+        "PostHogIntegration",
+        "createPostHogIntegration"
+      ],
+      "dependencies": [
+        "posthog-node",
+        "src/automation/livingworld-emitter.ts"
+      ],
+      "lines": 154,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Track aggregate floor engagement and provide fail-soft feature-flag circuit breakers.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/sources.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Schema",
+      "functions": [
+        "quietSnapshot"
+      ],
+      "dependencies": [
+        "src/livingworld/state.ts",
+        "src/livingworld/progression.ts"
+      ],
+      "lines": 44,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Limit every private-source adapter to the aggregate signals accepted by public floor state.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/integrations/supabase.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Adapter",
+      "functions": [
+        "SupabaseLoreBridge",
+        "NoopSupabaseBridge",
+        "createSupabaseLoreBridge"
+      ],
+      "dependencies": [
+        "@supabase/supabase-js",
+        "src/integrations/sources.ts"
+      ],
+      "lines": 154,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Turn aggregate lore and RPG-session counts into floor signals without reading row payloads.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/livingworld/contracts.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Schema",
+      "functions": [
+        "WRITERS_GUILD",
+        "WRITERS_CHAMPION",
+        "WRITERS_NATS_PREFIX",
+        "WRITERS_SUBJECTS"
+      ],
+      "dependencies": [
+        ".bits/srs/SRS-CN-WRITERS-LIVINGWORLD-001.md",
+        "src/livingworld/progression.ts"
+      ],
+      "lines": 83,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Define one public-safe schema for the Writers floor feeds and required NATS events.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/livingworld/progression.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Service",
+      "functions": [
+        "PROGRESSION_THRESHOLDS",
+        "normalizeProgressionMetrics",
+        "structureLevelFor"
+      ],
+      "dependencies": [
+        ".bits/progression.md"
+      ],
+      "lines": 72,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Derive structure growth only from verified lore, quest, and champion-uptime metrics.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/livingworld/state.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Service",
+      "functions": [
+        "LivingWorldState"
+      ],
+      "dependencies": [
+        "src/livingworld/contracts.ts",
+        "src/livingworld/progression.ts"
+      ],
+      "lines": 161,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Preserve only validated public floor state and default missing sources to a quiet floor.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/routes/health.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Route",
+      "functions": [
+        "healthCheck"
+      ],
+      "dependencies": [
+        "src/automation/livingworld-emitter.ts"
+      ],
+      "lines": 40,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Report healthy or quiet service mode without exposing connection details.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/routes/n8n.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Route",
+      "functions": [
+        "N8nWebhook",
+        "NoopN8nWebhook",
+        "createN8nWebhook"
+      ],
+      "dependencies": [
+        "src/automation/livingworld-emitter.ts",
+        "src/integrations/guild-comms.ts",
+        "src/integrations/posthog.ts"
+      ],
+      "lines": 141,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Accept only timestamped HMAC-authenticated workflow events and sanitize them into floor actions.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/routes/party.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Route",
+      "functions": [
+        "getWritersParty"
+      ],
+      "dependencies": [
+        "src/automation/livingworld-emitter.ts"
+      ],
+      "lines": 24,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Bind Quill as the public Writers floor guildmaster avatar.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/routes/realm.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Route",
+      "functions": [
+        "getWritersRealm"
+      ],
+      "dependencies": [
+        "src/automation/livingworld-emitter.ts"
+      ],
+      "lines": 24,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Expose the cleansed Writers floor snapshot consumed by the public game.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/server.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Service",
+      "functions": [
+        "createWritersRequestHandler"
+      ],
+      "dependencies": [
+        "src/routes/health.ts",
+        "src/routes/realm.ts",
+        "src/routes/party.ts",
+        "src/routes/n8n.ts"
+      ],
+      "lines": 124,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Serve only the public GET contracts required by the Writers living-world floor.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/telemetry/datadog.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Service",
+      "functions": [
+        "NoopFloorTelemetry",
+        "createFloorTelemetry"
+      ],
+      "dependencies": [
+        "dd-trace",
+        "hot-shots",
+        "src/automation/livingworld-emitter.ts"
+      ],
+      "lines": 156,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Trace floor operations and report source-derived Writers metrics without blocking service work.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/telemetry/mobile-rum.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Service",
+      "functions": [
+        "createMobileRumConfiguration",
+        "initializeMobileRum"
+      ],
+      "dependencies": [
+        "service.datadog.yaml"
+      ],
+      "lines": 92,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Configure mobile app vitals from runtime values while disabling RUM when identifiers are absent.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "test/engagement-integrations.test.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [],
+      "dependencies": [
+        "src/integrations/posthog.ts",
+        "src/integrations/customerio.ts",
+        "src/integrations/hooks.ts"
+      ],
+      "lines": 216,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Verify aggregate analytics, feature flags, messaging, and pseudonymous segmentation.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "test/livingworld.test.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [],
+      "dependencies": [
+        "src/automation/livingworld-emitter.ts",
+        "src/livingworld/state.ts"
+      ],
+      "lines": 226,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Prove floor state and events reflect validated inputs and remain quiet on unavailable sources.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "test/progression.test.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [],
+      "dependencies": [
+        "src/livingworld/progression.ts",
+        "src/livingworld/state.ts"
+      ],
+      "lines": 74,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Prove structures advance only when every documented real-metric threshold is met.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "test/server.test.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [],
+      "dependencies": [
+        "src/server.ts",
+        "src/routes/realm.ts",
+        "src/routes/party.ts"
+      ],
+      "lines": 249,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Verify the public realm and Quill party contracts over their exact HTTP paths.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "test/source-integrations.test.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [],
+      "dependencies": [
+        "src/integrations/gitlab.ts",
+        "src/integrations/supabase.ts",
+        "src/integrations/coordinator.ts"
+      ],
+      "lines": 413,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Verify private-source bridges emit only aggregate, opaque, fail-soft floor signals.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "test/telemetry.test.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [],
+      "dependencies": [
+        "src/telemetry/datadog.ts",
+        "src/telemetry/mobile-rum.ts"
+      ],
+      "lines": 150,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Verify telemetry is environment-gated and never blocks living-world behavior.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "test/webhook-comms.test.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "Test",
+      "functions": [],
+      "dependencies": [
+        "src/routes/n8n.ts",
+        "src/integrations/guild-comms.ts"
+      ],
+      "lines": 271,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Prove n8n requires fresh HMAC signatures and cross-guild messages match public schemas.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "tsconfig.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "package.json"
+      ],
+      "lines": 29,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Enable strict deterministic TypeScript builds for the public living-world service.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "tsconfig.json.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "tsconfig.json"
+      ],
+      "lines": 19,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Govern the JSON TypeScript configuration that validates the public living-world service.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "vitest.config.ts",
+      "cket_stage": "08_TEST",
+      "srs_codes": [
+        "SRS-CN-WRITERS-LIVINGWORLD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "package.json",
+        "tsconfig.json"
+      ],
+      "lines": 42,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Enforce repeatable living-world tests and minimum coverage for new public contracts.",
+      "objective_id": "DISP-LIVINGWORLD-writers",
+      "outcome": "success",
+      "supersedes": false,
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-LIVINGWORLD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-LIVINGWORLD-001",
+        "living-world",
+        "integrations"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "B",
+      "source": ".bits/agents/governance.yml",
+      "target": ".bits/queue/DISP-LIVINGWORLD-writers.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "Governance evaluates the active dispatch authorization.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/agents/governance.yml",
+      "target": ".bits/agents/quill.yml",
+      "edge_type": "GATES",
+      "weight": 1,
+      "description": "Agent governance gates the Quill seat configuration.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/agents/quill.yml",
+      "target": ".bits/agents/governance.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": ".bits/agents/quill.yml depends on .bits/agents/governance.yml.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/agents/quill.yml",
+      "target": "citadel.creator.subguild.writers.status",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": ".bits/agents/quill.yml produces citadel.creator.subguild.writers.status.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/agents/quill.yml",
+      "target": "citadel.guild.comms.writers→creator",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": ".bits/agents/quill.yml produces citadel.guild.comms.writers→creator.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/agents/quill.yml",
+      "target": "citadel.guild.comms.writers→finance",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": ".bits/agents/quill.yml produces citadel.guild.comms.writers→finance.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/agents/quill.yml",
+      "target": "citadel.writers.activity",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": ".bits/agents/quill.yml produces citadel.writers.activity.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/agents/quill.yml",
+      "target": "citadel.writers.champion",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": ".bits/agents/quill.yml produces citadel.writers.champion.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/agents/quill.yml",
+      "target": "citadel.writers.quest",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": ".bits/agents/quill.yml produces citadel.writers.quest.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/integration-checklist.md",
+      "target": ".env.example",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": ".bits/integration-checklist.md depends on .env.example.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/integration-checklist.md",
+      "target": "src/integrations/coordinator.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": ".bits/integration-checklist.md depends on src/integrations/coordinator.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-LIVINGWORLD-writers/memory.json.cgrf.yaml",
+      "target": ".bits/out/DISP-LIVINGWORLD-writers/memory.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "The JSON governance sibling identifies its memory payload.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-LIVINGWORLD-writers/memory.json",
+      "target": ".bits/out/DISP-LIVINGWORLD-writers/memory.json.cgrf.yaml",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "The memory payload is paired with JSON governance metadata.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/progression.md",
+      "target": "src/integrations/coordinator.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": ".bits/progression.md depends on src/integrations/coordinator.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/progression.md",
+      "target": "src/livingworld/progression.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": ".bits/progression.md depends on src/livingworld/progression.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/queue/DISP-LIVINGWORLD-writers.md",
+      "target": "SRS-CN-WRITERS-LIVINGWORLD-001",
+      "edge_type": "GATES",
+      "weight": 1,
+      "description": "The ready dispatch authorizes this SRS implementation.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".env.example",
+      "target": "src/index.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": ".env.example depends on src/index.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".env.example",
+      "target": "src/integrations/coordinator.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": ".env.example depends on src/integrations/coordinator.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".env.example",
+      "target": "src/telemetry/datadog.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": ".env.example depends on src/telemetry/datadog.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".env.example",
+      "target": "src/telemetry/mobile-rum.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": ".env.example depends on src/telemetry/mobile-rum.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".gitignore",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 0.7,
+      "description": "Ignore rules cover generated package artifacts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".gitignore",
+      "target": "tsconfig.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 0.7,
+      "description": "Ignore rules cover TypeScript build output.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".gitignore",
+      "target": "vitest.config.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 0.7,
+      "description": "Ignore rules cover coverage output.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "package-lock.json.cgrf.yaml",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 0.9,
+      "description": "The lock governance traces to package declarations.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "package-lock.json.cgrf.yaml",
+      "target": "package-lock.json",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "The CGRF sibling governs the JSON lockfile.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "package-lock.json",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "The lockfile resolves the declared package graph.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "package.json",
+      "target": "SRS-CN-WRITERS-LIVINGWORLD-001",
+      "edge_type": "DEPENDS_ON",
+      "weight": 0.8,
+      "description": "The package toolchain supports the SRS implementation.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "sbom.json.cgrf.yaml",
+      "target": "package-lock.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "sbom.json.cgrf.yaml depends on package-lock.json.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "sbom.json.cgrf.yaml",
+      "target": "sbom.json",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "sbom.json.cgrf.yaml validates sbom.json.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "service.datadog.yaml",
+      "target": "src/telemetry/datadog.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 0.9,
+      "description": "The catalog definition matches runtime telemetry.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "service.datadog.yaml",
+      "target": "guild-mcp-quill",
+      "edge_type": "OWNS",
+      "weight": 1,
+      "description": "The service catalog definition owns Quill's service identity.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/automation/livingworld-emitter.ts",
+      "target": "src/livingworld/progression.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/automation/livingworld-emitter.ts consumes src/livingworld/progression.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/automation/livingworld-emitter.ts",
+      "target": "src/livingworld/state.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/automation/livingworld-emitter.ts consumes src/livingworld/state.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/automation/livingworld-emitter.ts",
+      "target": "citadel.writers.activity",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/automation/livingworld-emitter.ts produces citadel.writers.activity.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/automation/livingworld-emitter.ts",
+      "target": "citadel.writers.champion",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/automation/livingworld-emitter.ts produces citadel.writers.champion.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/automation/livingworld-emitter.ts",
+      "target": "citadel.writers.quest",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/automation/livingworld-emitter.ts produces citadel.writers.quest.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/index.ts",
+      "target": "src/automation/livingworld-emitter.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/index.ts consumes src/automation/livingworld-emitter.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/index.ts",
+      "target": "src/integrations/coordinator.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/index.ts consumes src/integrations/coordinator.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/index.ts",
+      "target": "src/server.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/index.ts consumes src/server.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/index.ts",
+      "target": "src/telemetry/datadog.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/index.ts consumes src/telemetry/datadog.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/coordinator.ts",
+      "target": "src/integrations/posthog.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/integrations/coordinator.ts consumes src/integrations/posthog.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/coordinator.ts",
+      "target": "src/integrations/sources.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/integrations/coordinator.ts consumes src/integrations/sources.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/coordinator.ts",
+      "target": "src/automation/livingworld-emitter.ts",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/integrations/coordinator.ts produces src/automation/livingworld-emitter.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/customerio.ts",
+      "target": "src/automation/livingworld-emitter.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/integrations/customerio.ts consumes src/automation/livingworld-emitter.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/customerio.ts",
+      "target": "src/integrations/posthog.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/integrations/customerio.ts consumes src/integrations/posthog.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/customerio.ts",
+      "target": "customerio.guild-writers",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/integrations/customerio.ts produces customerio.guild-writers.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/gitlab.ts",
+      "target": "src/integrations/sources.ts",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/integrations/gitlab.ts produces src/integrations/sources.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/guild-comms.ts",
+      "target": "src/integrations/posthog.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/integrations/guild-comms.ts consumes src/integrations/posthog.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/guild-comms.ts",
+      "target": "citadel.creator.subguild.writers.status",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/integrations/guild-comms.ts produces citadel.creator.subguild.writers.status.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/guild-comms.ts",
+      "target": "citadel.guild.comms.writers→creator",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/integrations/guild-comms.ts produces citadel.guild.comms.writers→creator.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/guild-comms.ts",
+      "target": "citadel.guild.comms.writers→finance",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/integrations/guild-comms.ts produces citadel.guild.comms.writers→finance.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/hooks.ts",
+      "target": "src/automation/livingworld-emitter.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/integrations/hooks.ts consumes src/automation/livingworld-emitter.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/hooks.ts",
+      "target": "src/integrations/customerio.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "src/integrations/hooks.ts depends on src/integrations/customerio.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/hooks.ts",
+      "target": "src/integrations/posthog.ts",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1,
+      "description": "src/integrations/hooks.ts depends on src/integrations/posthog.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/posthog.ts",
+      "target": "src/automation/livingworld-emitter.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/integrations/posthog.ts consumes src/automation/livingworld-emitter.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/posthog.ts",
+      "target": "posthog.guild-writers",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/integrations/posthog.ts produces posthog.guild-writers.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/sources.ts",
+      "target": "src/livingworld/progression.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/integrations/sources.ts consumes src/livingworld/progression.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/sources.ts",
+      "target": "src/livingworld/state.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/integrations/sources.ts consumes src/livingworld/state.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/integrations/supabase.ts",
+      "target": "src/integrations/sources.ts",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/integrations/supabase.ts produces src/integrations/sources.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/contracts.ts",
+      "target": "src/livingworld/progression.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/livingworld/contracts.ts consumes src/livingworld/progression.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/contracts.ts",
+      "target": "SRS-CN-WRITERS-LIVINGWORLD-001",
+      "edge_type": "EXTENDS",
+      "weight": 1,
+      "description": "src/livingworld/contracts.ts extends SRS-CN-WRITERS-LIVINGWORLD-001.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/contracts.ts",
+      "target": "citadel.writers.activity",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/livingworld/contracts.ts produces citadel.writers.activity.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/contracts.ts",
+      "target": "citadel.writers.champion",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/livingworld/contracts.ts produces citadel.writers.champion.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/contracts.ts",
+      "target": "citadel.writers.quest",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/livingworld/contracts.ts produces citadel.writers.quest.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/progression.ts",
+      "target": ".bits/progression.md",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/livingworld/progression.ts consumes .bits/progression.md.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/progression.ts",
+      "target": "src/livingworld/state.ts",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/livingworld/progression.ts produces src/livingworld/state.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/state.ts",
+      "target": "src/livingworld/contracts.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/livingworld/state.ts consumes src/livingworld/contracts.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/state.ts",
+      "target": "src/livingworld/progression.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/livingworld/state.ts consumes src/livingworld/progression.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/state.ts",
+      "target": "src/routes/party.ts",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/livingworld/state.ts produces src/routes/party.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/state.ts",
+      "target": "src/routes/realm.ts",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/livingworld/state.ts produces src/routes/realm.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/routes/health.ts",
+      "target": "src/automation/livingworld-emitter.ts",
+      "edge_type": "CONSUMES",
+      "weight": 0.9,
+      "description": "Health reports emitter availability without connection data.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/routes/health.ts",
+      "target": ".bits/agents/quill.yml",
+      "edge_type": "VALIDATES",
+      "weight": 0.9,
+      "description": "The health route satisfies Quill's declared endpoint.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/routes/n8n.ts",
+      "target": "src/automation/livingworld-emitter.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/routes/n8n.ts consumes src/automation/livingworld-emitter.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/routes/n8n.ts",
+      "target": "src/integrations/guild-comms.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/routes/n8n.ts consumes src/integrations/guild-comms.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/routes/n8n.ts",
+      "target": "/webhooks/n8n",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "src/routes/n8n.ts produces /webhooks/n8n.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/routes/party.ts",
+      "target": "src/automation/livingworld-emitter.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "The party route reads the floor runtime.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/routes/party.ts",
+      "target": "/game/party.json",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "The route produces the Quill party feed.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/routes/realm.ts",
+      "target": "src/automation/livingworld-emitter.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "The realm route reads the floor runtime.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/routes/realm.ts",
+      "target": "/realm/writers.json",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "The route produces the public Writers realm feed.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/server.ts",
+      "target": "src/routes/health.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/server.ts consumes src/routes/health.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/server.ts",
+      "target": "src/routes/n8n.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/server.ts consumes src/routes/n8n.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/server.ts",
+      "target": "src/routes/party.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/server.ts consumes src/routes/party.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/server.ts",
+      "target": "src/routes/realm.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "src/server.ts consumes src/routes/realm.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/telemetry/datadog.ts",
+      "target": "src/automation/livingworld-emitter.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1,
+      "description": "Datadog telemetry consumes floor operation signals.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/telemetry/datadog.ts",
+      "target": "guild-mcp-quill",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "Telemetry produces signals under Quill's service identity.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/telemetry/mobile-rum.ts",
+      "target": "service.datadog.yaml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 0.9,
+      "description": "Mobile RUM shares the service catalog identity.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/telemetry/mobile-rum.ts",
+      "target": "guild-mcp-quill",
+      "edge_type": "PRODUCES",
+      "weight": 1,
+      "description": "Mobile RUM produces vitals for Quill's service.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/engagement-integrations.test.ts",
+      "target": "src/integrations/customerio.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "test/engagement-integrations.test.ts validates src/integrations/customerio.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/engagement-integrations.test.ts",
+      "target": "src/integrations/hooks.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "test/engagement-integrations.test.ts validates src/integrations/hooks.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/engagement-integrations.test.ts",
+      "target": "src/integrations/posthog.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "test/engagement-integrations.test.ts validates src/integrations/posthog.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/livingworld.test.ts",
+      "target": "src/automation/livingworld-emitter.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "Living-world tests validate event publication.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/livingworld.test.ts",
+      "target": "src/livingworld/state.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "Living-world tests validate fail-soft public state.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/progression.test.ts",
+      "target": "src/livingworld/progression.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "test/progression.test.ts validates src/livingworld/progression.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/progression.test.ts",
+      "target": "src/livingworld/state.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "test/progression.test.ts validates src/livingworld/state.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/server.test.ts",
+      "target": "src/routes/party.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "test/server.test.ts validates src/routes/party.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/server.test.ts",
+      "target": "src/routes/realm.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "test/server.test.ts validates src/routes/realm.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/server.test.ts",
+      "target": "src/server.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "test/server.test.ts validates src/server.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/source-integrations.test.ts",
+      "target": "src/integrations/coordinator.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "test/source-integrations.test.ts validates src/integrations/coordinator.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/source-integrations.test.ts",
+      "target": "src/integrations/gitlab.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "test/source-integrations.test.ts validates src/integrations/gitlab.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/source-integrations.test.ts",
+      "target": "src/integrations/supabase.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "test/source-integrations.test.ts validates src/integrations/supabase.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/telemetry.test.ts",
+      "target": "src/telemetry/datadog.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "Telemetry tests validate metrics and tracing fail-soft behavior.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/telemetry.test.ts",
+      "target": "src/telemetry/mobile-rum.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "Telemetry tests validate mobile RUM configuration.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/webhook-comms.test.ts",
+      "target": "src/integrations/guild-comms.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "test/webhook-comms.test.ts validates src/integrations/guild-comms.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "test/webhook-comms.test.ts",
+      "target": "src/routes/n8n.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "test/webhook-comms.test.ts validates src/routes/n8n.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "tsconfig.json.cgrf.yaml",
+      "target": "tsconfig.json",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "The CGRF sibling governs TypeScript JSON configuration.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "tsconfig.json",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 0.9,
+      "description": "TypeScript configuration uses the declared toolchain.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "vitest.config.ts",
+      "target": "src/automation/livingworld-emitter.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "vitest.config.ts validates src/automation/livingworld-emitter.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "vitest.config.ts",
+      "target": "src/livingworld/state.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1,
+      "description": "vitest.config.ts validates src/livingworld/state.ts.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "C",
+      "event_type": "test_pass",
+      "file_path": null,
+      "description": "Vitest passed 22 tests with 91.61% statements and 85.41% branches.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": "Validated living-world, HTTP, Datadog, and mobile RUM nodes.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "timestamp": "2026-09-25T19:13:55Z",
+      "commit_sha": null,
+      "smoke_result": "22/22"
+    },
+    {
+      "type": "C",
+      "event_type": "smoke_run",
+      "file_path": null,
+      "description": "TypeScript lint, coverage tests, and production build completed successfully.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": "Unblocked the SRS commit and review gates.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "timestamp": "2026-09-25T19:13:55Z",
+      "commit_sha": null,
+      "smoke_result": "3/3"
+    },
+    {
+      "type": "C",
+      "event_type": "test_pass",
+      "file_path": null,
+      "description": "Vitest passed 56 tests with 92.55% statements, 85.66% branches, 87.55% functions, and 93.20% lines.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": "Validated source adapters, circuits, HMAC ingress, progression, cross-guild contracts, telemetry, and public feeds.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "timestamp": "2026-09-25T20:00:03Z",
+      "commit_sha": null,
+      "smoke_result": "56/56"
+    },
+    {
+      "type": "C",
+      "event_type": "smoke_run",
+      "file_path": null,
+      "description": "Lint, coverage, production build, offline dependency audit, SBOM checks, and four live HTTP route checks completed successfully.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": "Unblocked integration, public-safety, dependency, and runtime review gates.",
+      "dispatch_id": "DISP-LIVINGWORLD-writers",
+      "timestamp": "2026-09-25T19:57:22Z",
+      "commit_sha": null,
+      "smoke_result": "8/8"
+    }
   ],
   "summary": {
-    "type_a_count": 27,
-    "type_b_count": 59,
-    "type_c_count": 2,
+    "type_a_count": 45,
+    "type_b_count": 108,
+    "type_c_count": 4,
     "ioo_compliance": true,
     "dkg_orphans": 0,
     "dispatch_id": "DISP-LIVINGWORLD-writers",
-    "srs_codes": ["SRS-CN-WRITERS-LIVINGWORLD-001"],
+    "srs_codes": [
+      "SRS-CN-WRITERS-LIVINGWORLD-001"
+    ],
     "seat": "BITS-CODEGEN"
   }
 }
