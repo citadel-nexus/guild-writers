@@ -1,0 +1,179 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        .github/workflows/lockfile-refresh.yml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-WRITERS-BUILD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-BUILD-writers
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-10-20
+# Depends:     .nvmrc, package.json, .github/BUILD.md
+# EnumType:    Workflow
+# EnumEdges:   DEPENDS_ON .nvmrc; DEPENDS_ON package.json; DEPENDS_ON .github/BUILD.md; PRODUCES bits/lockfile-refresh
+# DAG Node:    none
+# Intent:      Generate and validate a registry-resolved lockfile before proposing it for review.
+# ───────────────────────────────────────────────────────────────
+
+name: Refresh Writers lockfile
+
+on:
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: writers-lockfile-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    if: github.repository == 'citadel-nexus/guild-writers' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      packages: read
+    outputs:
+      changed: ${{ steps.lock.outputs.changed }}
+      base-sha: ${{ github.sha }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version-file: .nvmrc
+          registry-url: https://npm.pkg.github.com
+          scope: '@citadel-guilds'
+      - name: Regenerate and validate the lockfile
+        shell: bash
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          npm install --package-lock-only --ignore-scripts
+          npm ci && npm run lint && npm run typecheck && npm test && npm run build
+      - name: Stage only the validated lockfile
+        id: lock
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --exit-code -- . ':!package-lock.json'
+          if git diff --quiet -- package-lock.json; then
+            echo 'changed=false' >> "$GITHUB_OUTPUT"
+            echo 'The lockfile is already current; no PR needed.'
+          else
+            mkdir -p "$RUNNER_TEMP/lockfile-output"
+            cp package-lock.json "$RUNNER_TEMP/lockfile-output/package-lock.json"
+            echo 'changed=true' >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        if: steps.lock.outputs.changed == 'true'
+        with:
+          name: validated-lockfile-${{ github.run_id }}
+          path: ${{ runner.temp }}/lockfile-output/package-lock.json
+          if-no-files-found: error
+          retention-days: 7
+
+  propose:
+    needs: refresh
+    if: needs.refresh.outputs.changed == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: validated-lockfile-${{ github.run_id }}
+          path: refreshed
+      - name: Propose the validated lockfile
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          BASE_SHA: ${{ needs.refresh.outputs.base-sha }}
+        run: |
+          set -euo pipefail
+          # Never overwrite an existing review branch, force-push, or update main.
+          existing=$(gh api "repos/$GH_REPO/git/matching-refs/heads/bits/lockfile-refresh"             --jq '[.[] | select(.ref == "refs/heads/bits/lockfile-refresh")] | length')
+          if [ "$existing" != 0 ]; then
+            echo 'bits/lockfile-refresh already exists. Review/merge or close its PR and delete that branch before retrying.' >&2
+            exit 1
+          fi
+          old_blob=$(gh api "repos/$GH_REPO/contents/package-lock.json?ref=$BASE_SHA" --jq .sha)
+          export LOCKFILE_BLOB_SHA="$old_blob"
+          python - <<'PYTHON'
+          import base64, json, os
+          from pathlib import Path
+          message = """fix(guild): refresh the validated dependency lock
+
+          Resolve dependency metadata from the registry with the pinned toolchain.
+
+          Phase: B
+          Files: package-lock.json
+          Smoke: 5/5 passing
+          SRS: SRS-CN-WRITERS-BUILD-001
+          Dispatch: DISP-BUILD-writers
+          CK: pending"""
+          payload = {
+              "message": message,
+              "content": base64.b64encode(Path("refreshed/package-lock.json").read_bytes()).decode(),
+              "sha": os.environ["LOCKFILE_BLOB_SHA"],
+              "branch": "bits/lockfile-refresh",
+          }
+          (Path(os.environ["RUNNER_TEMP"]) / "lockfile-update.json").write_text(json.dumps(payload))
+          PYTHON
+          gh api --method POST "repos/$GH_REPO/git/refs"             -f ref=refs/heads/bits/lockfile-refresh -f sha="$BASE_SHA" > /dev/null
+          gh api --method PUT "repos/$GH_REPO/contents/package-lock.json"             --input "$RUNNER_TEMP/lockfile-update.json" > "$RUNNER_TEMP/lockfile-commit.json"
+          # GitHub creates the API commit; require its signature to be verified.
+          jq -e '.commit.verification.verified == true' "$RUNNER_TEMP/lockfile-commit.json" > /dev/null
+          cat > "$RUNNER_TEMP/lockfile-pr.md" <<'BODY'
+          ## Summary
+
+          Resolve the dependency graph using the pinned Node/npm toolchain and registry metadata.
+          Only the npm-generated package-lock.json is proposed; no integrity hashes were fabricated.
+
+          ## Changes
+
+          Refresh the lockfile from current main after install, lint, typecheck, tests and build pass.
+
+          ## Testing
+
+          Passed: npm ci, npm run lint, npm run typecheck, npm test, npm run build.
+          Review the Refresh Writers lockfile run for logs. Required PR checks must also run;
+          a human may need to close/reopen this PR because GITHUB_TOKEN does not trigger them.
+
+          ## SRS Code
+
+          SRS: SRS-CN-WRITERS-BUILD-001
+          Dispatch: DISP-BUILD-writers
+
+          ## Type of Change
+
+          - [ ] feat — new feature
+          - [x] fix — bug fix
+          - [ ] docs — documentation only
+          - [ ] chore — maintenance, refactor
+
+          ## Checklist
+
+          - [ ] SRS code referenced in branch name and commit
+          - [x] `npm test` passes
+          - [x] `npm run lint` passes
+          - [x] No private CNWB package imports
+          - [x] No hardcoded NATS subjects or Supabase URLs
+          - [x] No credentials or secrets in code
+          - [ ] SAKE file stub added for new modules
+          - [ ] Reviewed by at least 1 guild member
+
+          The fixed bits/lockfile-refresh branch is operator-directed; the commit carries SRS and dispatch footers.
+          No runtime module or SAKE stub is added. No auto-merge or protection bypass is enabled.
+
+          ## Related Issues
+
+          DISP-BUILD-writers; see .github/BUILD.md for the authorized flow and remaining hosted provenance checks.
+          BODY
+          gh pr create --repo "$GH_REPO" --base main --head bits/lockfile-refresh             --title 'fix(guild): refresh dependency lock [SRS-CN-WRITERS-BUILD-001] [Dispatch:DISP-BUILD-writers]'             --body-file "$RUNNER_TEMP/lockfile-pr.md"

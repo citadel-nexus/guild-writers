@@ -60,6 +60,7 @@ SRS-CN-WRITERS-BUILD-001:
     - test/
     - .github/workflows/
     - docker/Dockerfile
+    - .github/BUILD.md
     - .bits/srs/SRS-CN-WRITERS-BUILD-001.md
     - .bits/queue/DISP-BUILD-writers.md
     - .bits/out/DISP-BUILD-writers/

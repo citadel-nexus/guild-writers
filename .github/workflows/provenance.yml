@@ -87,6 +87,37 @@ jobs:
         uses: actions/attest-build-provenance@v3
         with:
           subject-path: artifacts/writers-${{ github.sha }}.tar.gz
+      - name: Verify provenance and reject invalid artifacts or signers
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ATTESTATION_BUNDLE: ${{ steps.attest.outputs.bundle-path }}
+        run: |
+          set -euo pipefail
+          artifact="artifacts/writers-${GITHUB_SHA}.tar.gz"
+          policy=(
+            --bundle "$ATTESTATION_BUNDLE"
+            --repo "$GITHUB_REPOSITORY"
+            --source-ref refs/heads/main
+            --source-digest "$GITHUB_SHA"
+            --predicate-type https://slsa.dev/provenance/v1
+            --deny-self-hosted-runners
+          )
+          signer="$GITHUB_REPOSITORY/.github/workflows/provenance.yml"
+          gh attestation verify "$artifact" "${policy[@]}" --signer-workflow "$signer"
+          tampered="$RUNNER_TEMP/writers-tampered.tar.gz"
+          cp "$artifact" "$tampered"
+          printf '\nintentional-tamper\n' >> "$tampered"
+          if gh attestation verify "$tampered" "${policy[@]}" --signer-workflow "$signer"; then
+            echo 'FAIL: a tampered artifact was accepted' >&2
+            exit 1
+          fi
+          if gh attestation verify "$artifact" "${policy[@]}"             --signer-workflow "$GITHUB_REPOSITORY/.github/workflows/lockfile-refresh.yml"; then
+            echo 'FAIL: an incorrect signer identity was accepted' >&2
+            exit 1
+          fi
+          # Confirm the original still verifies after the negative checks.
+          gh attestation verify "$artifact" "${policy[@]}" --signer-workflow "$signer"
       - name: Preserve the signed Sigstore bundle
         uses: actions/upload-artifact@v4
         with:

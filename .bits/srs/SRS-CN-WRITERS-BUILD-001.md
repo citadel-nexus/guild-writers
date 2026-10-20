@@ -45,5 +45,19 @@ external VCC update.
 - Provenance attests an archive of the actual compiled output after validation.
 - Record exact outcomes/blockers for npm ci, lint, typecheck, test and build.
 
-Use one new branch and PR based on merged governance PR 20. No blueprint or CK
+The initial build work was merged as PR 21. The operator authorizes continuation
+on the bound publishing branch rebased onto current main, and the fixed
+bits/lockfile-refresh branch for the manual automation PR. No blueprint or CK
 signature is generated. CKS gate B+/75; CKS, CAPS and CK remain pending.
+
+## Continuation acceptance criteria
+
+- Manual-only, SHA-pinned lockfile refresh uses read-only install credentials,
+  runs all five requested checks, then proposes only the generated lockfile on
+  bits/lockfile-refresh with a separate, narrowly privileged publication job.
+- Positive provenance verification succeeds; tampered bytes and a wrong signer
+  must be rejected before the retained bundle is published as an artifact.
+- BUILD.md explains registry auth, admin prerequisites, signed API commits,
+  PR check-trigger limits and failures without creating secrets or changing settings.
+- Rebase the bound local branch onto the current main; preserve already-published
+  commits and report the actual ability/limits of external UI publication.
