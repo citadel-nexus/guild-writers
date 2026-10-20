@@ -3,10 +3,10 @@
     "target": "ES2022",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "lib": ["ES2023"],
+    "lib": [
+      "ES2023"
+    ],
     "rootDir": ".",
-    "outDir": "dist",
-    "declaration": true,
     "strict": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
@@ -14,7 +14,11 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
-    "types": ["node", "vitest/globals"]
+    "types": [
+      "node",
+      "vitest/globals"
+    ],
+    "noEmit": true
   },
   "include": [
     "src/index.ts",
@@ -23,6 +27,7 @@
     "src/routes/**/*.ts",
     "src/automation/livingworld-emitter.ts",
     "src/telemetry/**/*.ts",
+    "src/integrations/**/*.ts",
     "test/**/*.ts",
     "vitest.config.ts"
   ]

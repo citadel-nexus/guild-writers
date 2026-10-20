@@ -1,0 +1,99 @@
+# ─── CGRF Header ──────────────────────────────
+# File:         .github/workflows/lockfile-refresh.yml
+# Stage:        11_COMMIT
+# SRS:          SRS-CN-WRITERS-BUILD-001
+# CAPS:         pending
+# CK:           pending
+# Dispatch:     DISP-BUILD-writers
+# Seat:         BITS-CODEGEN
+# Owner:        Citadel Nexus Inc.
+# Created:      2026-10-20
+# Depends:      package-lock.json, .nvmrc
+# EnumType:     Workflow
+# EnumEdges:    PRODUCES package-lock.json; DEPENDS_ON .nvmrc
+# DAG Node:     none
+# Intent:       Resolve authentic npm metadata in an operator-triggered runner and propose only a validated lockfile.
+# ──────────────────────────────────────────────
+
+name: Refresh npm lockfile
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: writers-lockfile-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      pull-requests: write
+      packages: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version-file: .nvmrc
+          registry-url: https://npm.pkg.github.com
+          scope: '@citadel-guilds'
+      - name: Refresh real registry metadata
+        run: npm install --package-lock-only --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Validate refreshed lockfile
+        run: npm ci && npm run lint && npm run typecheck && npm test && npm run build
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Open lockfile-only PR
+        uses: peter-evans/create-pull-request@5e914681df9dc83aa4e4905692ca88beb2f2e91f
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: bits/lockfile-refresh
+          add-paths: package-lock.json
+          title: "chore(bits): refresh npm lockfile [SRS-CN-WRITERS-BUILD-001] [Dispatch:DISP-BUILD-writers]"
+          commit-message: |
+            chore(bits): refresh verified npm lockfile
+
+            Resolve registry metadata after validating the supported toolchain.
+
+            Phase: B
+            Files: package-lock.json
+            Smoke: 5/5 passing
+            SRS: SRS-CN-WRITERS-BUILD-001
+            Dispatch: DISP-BUILD-writers
+            CK: pending
+          body: |
+            ## Summary
+            Refresh real registry resolutions for the Writers build repair.
+            Only package-lock.json is included. No auto-merge or main push.
+
+            ## SRS Code
+            SRS: SRS-CN-WRITERS-BUILD-001
+            Dispatch: DISP-BUILD-writers
+
+            ## Changes
+            Resolve the declared dependencies with the Node version in .nvmrc.
+
+            ## Testing
+            npm ci, lint, typecheck, test (coverage), and build passed before PR creation.
+            GITHUB_TOKEN-created PRs may not trigger CI automatically. A maintainer
+            must arrange an approved check run before merge; do not bypass rulesets.
+
+            ## Type of Change
+            - [x] chore — maintenance, refactor
+
+            ## Checklist
+            - [x] SRS referenced in commit
+            - [x] npm test passes
+            - [x] npm run lint passes
+            - [ ] Reviewed by at least 1 guild member
+
+            ## Related Issues
+            DISP-BUILD-writers

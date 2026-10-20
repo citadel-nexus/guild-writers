@@ -23,3 +23,32 @@ SRS-CN-WRITERS-AUTOMATION-001:
   notes: >
     Enable Datadog CI Visibility, fix service catalog entry, document PostHog
     environment variables, and add CODEOWNERS for PR review automation.
+
+SRS-CN-WRITERS-BUILD-001:
+  status: in_progress
+  dispatch: DISP-BUILD-writers
+  dispatch_status: in_progress
+  mode: staging
+  phase: "Writers build repair and verifiable provenance"
+  cks_gate: "B+/75"
+  caps_minimum: pending
+  paths:
+    - .bits/srs/SRS-CN-WRITERS-BUILD-001.md
+    - .bits/queue/DISP-BUILD-writers.md
+    - .bits/out/DISP-BUILD-writers/
+    - .github/
+    - package.json
+    - tsconfig.json
+    - tsconfig.build.json
+    - eslint.config.mjs
+    - .nvmrc
+    - docker/Dockerfile
+    - src/livingworld/state.ts
+    - test/build-provenance.check.mjs
+    - .dockerignore
+    - .gitignore
+    - GOVERNANCE.md
+    - PROVENANCE.md
+  notes: >
+    Operator-authorized staging repair. Keep tests, coverage and security scans;
+    generate lockfile metadata only with registry access. No deployment or settings changes.

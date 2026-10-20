@@ -1,0 +1,17 @@
+# ─── CGRF Header ──────────────────────────────
+# File:         tsconfig.build.json
+# Stage:        11_COMMIT
+# SRS:          SRS-CN-WRITERS-BUILD-001
+# CAPS:         pending
+# CK:           pending
+# Dispatch:     DISP-BUILD-writers
+# Seat:         BITS-CODEGEN
+# Owner:        Citadel Nexus Inc.
+# Created:      2026-10-20
+# Depends:      tsconfig.json
+# EnumType:     ConfigDoc
+# EnumEdges:    EXTENDS tsconfig.json
+# DAG Node:     none
+# Intent:       Emit only the active service graph after successful strict compilation.
+# ──────────────────────────────────────────────
+

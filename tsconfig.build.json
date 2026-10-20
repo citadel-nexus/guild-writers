@@ -1,0 +1,26 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "noEmitOnError": true,
+    "outDir": "dist",
+    "declaration": true,
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "src/index.ts",
+    "src/server.ts",
+    "src/livingworld/**/*.ts",
+    "src/routes/**/*.ts",
+    "src/integrations/**/*.ts",
+    "src/automation/livingworld-emitter.ts",
+    "src/telemetry/**/*.ts"
+  ],
+  "exclude": [
+    "test",
+    "dist",
+    "node_modules"
+  ]
+}

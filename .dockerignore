@@ -1,0 +1,26 @@
+# ─── CGRF Header ──────────────────────────────
+# File:         .dockerignore
+# Stage:        11_COMMIT
+# SRS:          SRS-CN-WRITERS-BUILD-001
+# CAPS:         pending
+# CK:           pending
+# Dispatch:     DISP-BUILD-writers
+# Seat:         BITS-CODEGEN
+# Owner:        Citadel Nexus Inc.
+# Created:      2026-10-20
+# Depends:      docker/Dockerfile
+# EnumType:     ConfigDoc
+# EnumEdges:    GATES docker/Dockerfile
+# DAG Node:     none
+# Intent:       Keep local artifacts, dependency installs and environment files outside Docker build context.
+# ──────────────────────────────────────────────
+
+.git
+node_modules
+dist
+coverage
+artifacts
+.bits
+test
+.env
+.env.*

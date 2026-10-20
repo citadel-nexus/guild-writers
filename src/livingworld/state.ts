@@ -73,7 +73,7 @@ function normalizeQuest(change: QuestChange): PublicQuest | null {
 }
 
 export class LivingWorldState {
-  private activityLevel = QUIET_ACTIVITY_LEVEL;
+  private activityLevel: number = QUIET_ACTIVITY_LEVEL;
   private championState: ChampionState = 'idle';
   private structureLevel: StructureLevel = 1;
   private progression: ProgressionMetrics = normalizeProgressionMetrics({});
