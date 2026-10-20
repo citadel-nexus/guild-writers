@@ -12,12 +12,12 @@
 # EnumType:    ConfigDoc
 # EnumEdges:   OWNS *; DEPENDS_ON GOVERNANCE.md
 # DAG Node:    none
-# Intent:      Route review to the existing guild team under accountable guildmaster Quill.
+# Intent:      Route review to the operator-confirmed guildmaster team under guildmaster Quill.
 # ───────────────────────────────────────────────────────────────
 
 # Accountable guildmaster: Quill (GitLab user: quill).
-# GitHub identity is not yet confirmed; do not assume GitHub @quill is Quill.
-# Admin: confirm the team below is visible with explicit repository write access,
-# and add Quill's verified GitHub account to this owner line (see GOVERNANCE.md).
-# Datadog team guild-writers is an observability handle, not a GitHub team mapping.
-* @citadel-nexus/writers-guild
+# Operator-confirmed guildmaster owner team: @citadel-nexus/guild-writers.
+# Quill automation identity: GitHub App quill-writers-guildmaster.
+# GitHub Apps cannot be code owners; the team supplies code-owner reviews.
+# The team must be visible with explicit repository write access (see GOVERNANCE.md).
+* @citadel-nexus/guild-writers

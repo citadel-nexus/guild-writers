@@ -34,12 +34,18 @@ protection documentation or config, and a workflow for signed build provenance.
 No production, deploy, push to main, GitHub settings changes or secrets.
 This is a local dispatch; external VCC synchronization remains operator-owned.
 
+Operator follow-up under this same SRS and dispatch confirms, through the
+Datadog `guild-writers` team links, GitHub owner team
+`@citadel-nexus/guild-writers` and Quill's automation app
+`quill-writers-guildmaster`. Apply the team as CODEOWNERS owner and record the
+app as the expected ruleset actor; no personal GitHub identity lookup remains.
+
 ## Task table
 
 | Phase | Task | Gate |
 | --- | --- | --- |
 | A | Register scoped SRS and dispatch; preserve earlier registry entries | Registry contains this SRS and dispatch status is in_progress |
-| B | Guild charter, ownership and admin protection instructions | Quill, scope, approvals, escalation and identity prerequisite are explicit |
+| B | Guild charter, ownership and admin protection instructions | Quill, confirmed team/app identities, scope, approvals and escalation are explicit |
 | C | Read-only PR build and trusted-main signed provenance | Signing is isolated from builds and never runs on PRs or non-main refs |
 | D | Verify, record memory and prepare review metadata | Smoke results and live-CI limitations are recorded truthfully |
 
@@ -71,6 +77,7 @@ GitHub rules enforcement require post-merge validation and admin activation.
 ## Memory Brief
 
 No injected Memory Brief was supplied. Prior art used: the existing TypeScript
-npm scripts, GitHub Actions conventions and `@citadel-nexus/writers-guild`
-ownership route. Quill's GitHub account and that team's eligibility require
-admin confirmation; the Datadog team handle is not a GitHub ownership mapping.
+npm scripts and GitHub Actions conventions. The operator-confirmed ownership
+mapping is `@citadel-nexus/guild-writers`; Quill's automation app is
+`quill-writers-guildmaster`. GitHub team visibility/write access and ruleset
+activation remain admin settings requirements, not identity follow-ups.

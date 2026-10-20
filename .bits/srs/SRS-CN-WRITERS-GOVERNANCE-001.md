@@ -40,8 +40,10 @@ It does not authorize changes to other workflows or other SRS entries.
 
 ## Acceptance criteria
 
-1. Name Quill as accountable guildmaster; use a valid GitHub ownership route
-   without assuming a GitLab username or Datadog handle is a GitHub identity.
+1. Name Quill as accountable guildmaster and use the operator-confirmed GitHub
+   team `@citadel-nexus/guild-writers` as CODEOWNERS owner. Record GitHub App
+   `quill-writers-guildmaster` as Quill's automation identity and expected
+   ruleset actor; the app cannot be a code owner and receives no ruleset bypass.
 2. Define written-content, wiki, publishing-health and Writers Floor scope,
    approval requirements and escalation to the guildmasters group.
 3. Specify admin activation of code-owner review, signed commits and required

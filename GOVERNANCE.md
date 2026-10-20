@@ -32,14 +32,16 @@ Contributors propose changes through scoped pull requests with an authorized
 SRS and dispatch. Reviewers check public-safe content, accessibility, source
 accuracy, tests and provenance as appropriate to the change.
 
-`.github/CODEOWNERS` routes all paths, including governance and workflows, to
-`@citadel-nexus/writers-guild`, the existing GitHub owner team. Its membership
-and write access have not been verified in this session. **GitLab `quill` is
-not proof of ownership of GitHub `@quill`.** Before activating code-owner rules,
-an admin must confirm Quill's GitHub account, grant it explicit write access,
-and add that verified handle to the wildcard owner line. Confirm the owner
-team is visible and has explicit write access too. Do not substitute the
-Datadog handle for a GitHub team.
+The operator confirmed Quill's GitHub identities through the Datadog team
+`guild-writers` links:
+
+- Guildmaster owner team: [@citadel-nexus/guild-writers](https://github.com/orgs/citadel-nexus/teams/guild-writers).
+  `.github/CODEOWNERS` routes all paths, including governance and workflows,
+  to this team. The team must be visible and have explicit repository write
+  access for GitHub to require its reviews.
+- Automation identity: GitHub App [quill-writers-guildmaster](https://github.com/apps/quill-writers-guildmaster).
+  GitHub Apps cannot be code owners; Quill's automation identity does not
+  replace an eligible team member's required code-owner approval.
 
 ## Decisions, approvals and escalation
 
@@ -72,12 +74,18 @@ ruleset** targeting the default branch (currently `main`) with:
 | Requirement | GitHub setting |
 | --- | --- |
 | Changes enter via PR | Require a pull request before merging; at least 1 approval |
-| Ownership approval | Require review from Code Owners; first resolve the identity/access prerequisites above |
+| Ownership approval | Require review from Code Owners using @citadel-nexus/guild-writers; ensure team visibility and explicit repository write access |
 | Approval freshness | Dismiss stale approvals on new commits; require approval of the most recent reviewable push by someone other than its author |
 | Review completion | Require conversation resolution before merging |
 | Commit authenticity | Require signed commits; contributors must use a GitHub-verified signing identity |
 | Merge validation | Require status checks and require branches to be up to date |
 | History integrity | Block force pushes and deletion; keep bypass list empty, including routine admin bypass |
+
+The expected actor for Quill's automation in ruleset activity is the GitHub App
+`quill-writers-guildmaster`. Its changes must satisfy the same PR, code-owner
+review, signed-commit and status-check requirements. Do not grant the app a
+ruleset bypass. This actor mapping does not change the expected source of the
+required CI checks, which remains GitHub Actions.
 
 Select the existing CI `build` check and the new **`Provenance build`** check
 from the **GitHub Actions** source after they have appeared on a PR. Confirm

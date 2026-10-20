@@ -37,7 +37,7 @@ Commits: resolve after capture with `git log --format='%h %s' 258fc755aecea9284a
 | Task | Status | Output | Verify | Files | CKET |
 | --- | --- | --- | --- | --- | --- |
 | A — authorize | PASS | Local SRS and in-progress dispatch; original registry entries preserved | Reproduce static checks below | .bits/srs_registry.yml, .bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md, .bits/queue/DISP-GOVERNANCE-writers.md | 04_HYPOTHESIZE, 11_COMMIT |
-| B — govern | PASS with admin prerequisite | Quill accountable; existing owner team retained pending GitHub identity confirmation; protection and escalation rules documented | Reproduce static checks; inspect GOVERNANCE.md | GOVERNANCE.md, .github/CODEOWNERS | 06_PLAN, 11_COMMIT |
+| B — govern | PASS with admin prerequisite | Quill accountable; operator-confirmed guild-writers team owns all paths; quill-writers-guildmaster app is the expected automation actor; protection and escalation rules documented | Reproduce static checks; inspect GOVERNANCE.md | GOVERNANCE.md, .github/CODEOWNERS | 06_PLAN, 11_COMMIT |
 | C — attest | PASS for implementation | Read-only PR build; isolated trusted-main keyless signing and retained bundle; no deploy | Reproduce static checks below | .github/workflows/provenance.yml | 11_COMMIT |
 | D — verify and report | PARTIAL | Static checks pass; dependency/tooling blocks real build and smoke target | Run dispatch smoke in a dependency-equipped environment | .bits/out/DISP-GOVERNANCE-writers/ | 11_COMMIT |
 
@@ -61,6 +61,11 @@ install was attempted because this sandbox does not support shell internet acces
 Applied fix: none within this governance SRS. Reverify with `npm ci`, then the
 complete dispatch smoke block in an authorized dependency-equipped environment.
 If CI reproduces the failure, repair dependencies under a separate scoped dispatch.
+
+The identity follow-up updates the team owner and documents Quill's app as the
+expected ruleset actor. Supplementary static checks were rerun for this edit;
+the recorded npm failures were not rerun because application code,
+workflows and dependencies are unchanged.
 
 No new application modules or pytest tests were added. Application coverage was
 not measured. Real OIDC issuance, signature verification, negative signature/source
@@ -152,7 +157,12 @@ for flag in ['--repo', '--signer-workflow', '--source-ref', '--source-digest', '
     assert flag in help_text and flag in doc
 for item in ['Quill', 'guild-writers', 'guildmasters group', 'Require signed commits', 'Code Owners', 'Provenance build', 'admin', '30-day']:
     assert item in doc
-assert '* @citadel-nexus/writers-guild' in Path('.github/CODEOWNERS').read_text()
+owner_lines = [line.strip() for line in Path('.github/CODEOWNERS').read_text().splitlines() if line.strip() and not line.startswith('#')]
+assert owner_lines == ['* @citadel-nexus/guild-writers']
+assert 'https://github.com/apps/quill-writers-guildmaster' in doc
+rules = doc.split('## Default-branch protections:', 1)[1].split('## Signed build artifacts', 1)[0]
+assert 'expected actor' in rules and '`quill-writers-guildmaster`' in rules
+assert 'Do not grant the app a' in rules and 'ruleset bypass' in rules
 print('Governance requirements and installed CLI verification flags: PASS')
 print('Phase C: PASS (static checks only; hosted signing pending)')
 ```
@@ -160,7 +170,7 @@ print('Phase C: PASS (static checks only; hosted signing pending)')
 ## §4 MEMORY INGEST
 
 Payload: .bits/out/DISP-GOVERNANCE-writers/memory.json  
-Type A count: 9; Type B count: 21; Type C count: 3  
+Type A count: 9; Type B count: 21; Type C count: 4
 IOO compliance: true; DKG orphans: 0  
 Verify counts: `python -m json.tool .bits/out/DISP-GOVERNANCE-writers/memory.json`.
 No external memory write is performed. The operator/post-merge workflow owns ingestion.
@@ -194,8 +204,6 @@ Do not apply verified:tests-pass.
 
 ## §7 NEXT ACTIONS
 
-- Confirm Quill's GitHub account and owner-team eligibility; add the verified
-  account to CODEOWNERS. GitLab/Datadog identity must not be guessed.
 - Run installation, lint, tests, build and real archive smoke in CI; diagnose the
   dependency issue if it reproduces. Smoke target is not met in this sandbox.
 - Admin activates and tests the default-branch rules and Actions permissions

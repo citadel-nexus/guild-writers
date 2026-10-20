@@ -42,7 +42,7 @@
       "dependencies": [
         ".bits/srs_registry.yml"
       ],
-      "lines": 63,
+      "lines": 65,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Bound operator-authorized Writers Guild governance and signed provenance work.",
@@ -74,7 +74,7 @@
       "dependencies": [
         ".bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md"
       ],
-      "lines": 76,
+      "lines": 83,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Record operator authority and reviewable acceptance gates for this staging bootstrap.",
@@ -109,7 +109,7 @@
       "lines": 23,
       "caps_grade": "pending",
       "ck_stamp": "pending",
-      "intent_statement": "Route review to the existing guild team under accountable guildmaster Quill.",
+      "intent_statement": "Route review to the operator-confirmed guildmaster team under guildmaster Quill.",
       "objective_id": "DISP-GOVERNANCE-writers",
       "outcome": "partial",
       "supersedes": false,
@@ -140,7 +140,7 @@
         ".github/workflows/provenance.yml",
         ".bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md"
       ],
-      "lines": 188,
+      "lines": 196,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Make Writers Guild accountability and artifact trust requirements explicit for maintainers.",
@@ -205,7 +205,7 @@
       "dependencies": [
         ".bits/queue/DISP-GOVERNANCE-writers.md"
       ],
-      "lines": 209,
+      "lines": 217,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Preserve reproducible checks and unresolved prerequisites for governance review.",
@@ -235,7 +235,7 @@
       "enum_type": "Schema",
       "functions": [],
       "dependencies": [],
-      "lines": 556,
+      "lines": 569,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Preserve file relationships and actual validation outcomes for later authorized memory ingestion.",
@@ -539,12 +539,25 @@
       "timestamp": "2026-10-20T17:33:58.591338+00:00",
       "commit_sha": null,
       "smoke_result": "1/6"
+    },
+    {
+      "type": "C",
+      "event_type": "test_pass",
+      "file_path": ".github/CODEOWNERS",
+      "description": "Operator-confirmed @citadel-nexus/guild-writers now owns all paths; quill-writers-guildmaster is documented as the expected automation actor without ruleset bypass. Identity-confirmation follow-ups removed. All four supplementary static groups passed, including exact team ownership and actor documentation checks; prior npm and hosted-signing limitations remain.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "timestamp": "2026-10-20T17:38:30.302651+00:00",
+      "commit_sha": null,
+      "smoke_result": "4/4 static"
     }
   ],
   "summary": {
     "type_a_count": 9,
     "type_b_count": 21,
-    "type_c_count": 3,
+    "type_c_count": 4,
     "ioo_compliance": true,
     "dkg_orphans": 0,
     "dispatch_id": "DISP-GOVERNANCE-writers",
