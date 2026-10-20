@@ -1,0 +1,21 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false
+  },
+  "include": [
+    "src/index.ts",
+    "src/server.ts",
+    "src/livingworld/**/*.ts",
+    "src/routes/**/*.ts",
+    "src/automation/livingworld-emitter.ts",
+    "src/telemetry/**/*.ts",
+    "src/integrations/**/*.ts"
+  ],
+  "exclude": [
+    "test",
+    "dist",
+    "node_modules",
+    "vitest.config.ts"
+  ]
+}

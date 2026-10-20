@@ -1,0 +1,1101 @@
+{
+  "type_a": [
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-BUILD-writers/memory.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 1101,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Repair and record the Writers Guild build contract in .bits/out/DISP-BUILD-writers/memory.json under the authorized staging dispatch.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-BUILD-writers/memory.json.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/out/DISP-BUILD-writers/memory.json"
+      ],
+      "lines": 18,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Provide governance metadata for the build-repair memory payload.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-BUILD-writers/report.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".bits/queue/DISP-BUILD-writers.md",
+        ".bits/out/DISP-BUILD-writers/memory.json.cgrf.yaml"
+      ],
+      "lines": 273,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Preserve build-repair evidence and explicit blockers before review.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/queue/DISP-BUILD-writers.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/srs/SRS-CN-WRITERS-BUILD-001.md"
+      ],
+      "lines": 63,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Record build-repair authority and measurable validation gates.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/srs/SRS-CN-WRITERS-BUILD-001.md",
+      "cket_stage": "04_HYPOTHESIZE",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/srs_registry.yml"
+      ],
+      "lines": 49,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Bound the operator-authorized build repair to reproducible validation and CI.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/srs_registry.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 69,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Repair and record the Writers Guild build contract in .bits/srs_registry.yml under the authorized staging dispatch.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".github/workflows/ci.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 47,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Repair and record the Writers Guild build contract in .github/workflows/ci.yml under the authorized staging dispatch.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".github/workflows/provenance.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "Workflow",
+      "functions": [],
+      "dependencies": [
+        "package.json",
+        "package-lock.json"
+      ],
+      "lines": 96,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Bind compiled Writers Guild artifacts to verified builds using keyless signed provenance.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".github/workflows/release.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 30,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Repair and record the Writers Guild build contract in .github/workflows/release.yml under the authorized staging dispatch.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".github/workflows/security-scan.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 43,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Repair and record the Writers Guild build contract in .github/workflows/security-scan.yml under the authorized staging dispatch.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".nvmrc",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 18,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Use the same supported Node runtime locally and in every build job.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "docker/Dockerfile",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 15,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Repair and record the Writers Guild build contract in docker/Dockerfile under the authorized staging dispatch.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "eslint.config.mjs",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "tsconfig.json",
+        "package.json"
+      ],
+      "lines": 40,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Lint the existing checked TypeScript surface independently of compilation.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "package-lock.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 4989,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Repair and record the Writers Guild build contract in package-lock.json under the authorized staging dispatch.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "package.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 37,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Repair and record the Writers Guild build contract in package.json under the authorized staging dispatch.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "package.json.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "package.json"
+      ],
+      "lines": 18,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Describe the manifest contract for the pinned build and validation toolchain.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "src/livingworld/state.ts",
+      "cket_stage": "07_BUILD",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "Service",
+      "functions": [],
+      "dependencies": [],
+      "lines": 162,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Preserve only validated public floor state and default missing sources to a quiet floor.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "tsconfig.build.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 21,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Repair and record the Writers Guild build contract in tsconfig.build.json under the authorized staging dispatch.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "tsconfig.build.json.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "tsconfig.json"
+      ],
+      "lines": 18,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Emit only the production TypeScript graph and fail before producing invalid output.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "tsconfig.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 36,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Repair and record the Writers Guild build contract in tsconfig.json under the authorized staging dispatch.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    }
+  ],
+  "type_b": [
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/memory.json.cgrf.yaml",
+      "target": ".bits/out/DISP-BUILD-writers/memory.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/memory.json.cgrf.yaml depends_on .bits/out/DISP-BUILD-writers/memory.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/memory.json.cgrf.yaml",
+      "target": ".bits/out/DISP-BUILD-writers/memory.json",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/memory.json.cgrf.yaml gates .bits/out/DISP-BUILD-writers/memory.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": ".bits/queue/DISP-BUILD-writers.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md depends_on .bits/queue/DISP-BUILD-writers.md.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": ".bits/queue/DISP-BUILD-writers.md",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates .bits/queue/DISP-BUILD-writers.md.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": ".bits/srs/SRS-CN-WRITERS-BUILD-001.md",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates .bits/srs/SRS-CN-WRITERS-BUILD-001.md.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": ".bits/srs_registry.yml",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates .bits/srs_registry.yml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": ".github/workflows/ci.yml",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates .github/workflows/ci.yml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": ".github/workflows/provenance.yml",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates .github/workflows/provenance.yml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": ".github/workflows/release.yml",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates .github/workflows/release.yml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": ".github/workflows/security-scan.yml",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates .github/workflows/security-scan.yml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": ".nvmrc",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates .nvmrc.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": "docker/Dockerfile",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates docker/Dockerfile.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": "eslint.config.mjs",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates eslint.config.mjs.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": "package-lock.json",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates package-lock.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": "package.json",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates package.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": "package.json.cgrf.yaml",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates package.json.cgrf.yaml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": "src/livingworld/state.ts",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates src/livingworld/state.ts.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": "tsconfig.build.json",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates tsconfig.build.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": "tsconfig.build.json.cgrf.yaml",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates tsconfig.build.json.cgrf.yaml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": "tsconfig.json",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates tsconfig.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": ".bits/out/DISP-BUILD-writers/memory.json",
+      "edge_type": "PRODUCES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md produces .bits/out/DISP-BUILD-writers/memory.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": ".bits/out/DISP-BUILD-writers/memory.json.cgrf.yaml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md depends_on .bits/out/DISP-BUILD-writers/memory.json.cgrf.yaml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/queue/DISP-BUILD-writers.md",
+      "target": ".bits/srs/SRS-CN-WRITERS-BUILD-001.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/queue/DISP-BUILD-writers.md depends_on .bits/srs/SRS-CN-WRITERS-BUILD-001.md.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/queue/DISP-BUILD-writers.md",
+      "target": "package.json",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".bits/queue/DISP-BUILD-writers.md gates package.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs/SRS-CN-WRITERS-BUILD-001.md",
+      "target": ".bits/srs_registry.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/srs/SRS-CN-WRITERS-BUILD-001.md depends_on .bits/srs_registry.yml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs/SRS-CN-WRITERS-BUILD-001.md",
+      "target": "package.json",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".bits/srs/SRS-CN-WRITERS-BUILD-001.md gates package.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs/SRS-CN-WRITERS-BUILD-001.md",
+      "target": ".github/workflows/ci.yml",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".bits/srs/SRS-CN-WRITERS-BUILD-001.md gates .github/workflows/ci.yml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/provenance.yml",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/provenance.yml depends_on package.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/provenance.yml",
+      "target": "package-lock.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/provenance.yml depends_on package-lock.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/provenance.yml",
+      "target": "writers-build",
+      "edge_type": "PRODUCES",
+      "weight": 1.0,
+      "description": ".github/workflows/provenance.yml produces writers-build.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/provenance.yml",
+      "target": "writers-provenance",
+      "edge_type": "PRODUCES",
+      "weight": 1.0,
+      "description": ".github/workflows/provenance.yml produces writers-provenance.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".nvmrc",
+      "target": "package.json",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".nvmrc gates package.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".nvmrc",
+      "target": ".github/workflows/ci.yml",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".nvmrc gates .github/workflows/ci.yml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "eslint.config.mjs",
+      "target": "tsconfig.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "eslint.config.mjs depends_on tsconfig.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "eslint.config.mjs",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "eslint.config.mjs depends_on package.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "package.json.cgrf.yaml",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "package.json.cgrf.yaml depends_on package.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "package.json.cgrf.yaml",
+      "target": "package.json",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": "package.json.cgrf.yaml gates package.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/state.ts",
+      "target": "src/livingworld/contracts.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1.0,
+      "description": "src/livingworld/state.ts consumes src/livingworld/contracts.ts.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/state.ts",
+      "target": "src/livingworld/progression.ts",
+      "edge_type": "CONSUMES",
+      "weight": 1.0,
+      "description": "src/livingworld/state.ts consumes src/livingworld/progression.ts.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/state.ts",
+      "target": "src/routes/realm.ts",
+      "edge_type": "PRODUCES",
+      "weight": 1.0,
+      "description": "src/livingworld/state.ts produces src/routes/realm.ts.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "src/livingworld/state.ts",
+      "target": "src/routes/party.ts",
+      "edge_type": "PRODUCES",
+      "weight": 1.0,
+      "description": "src/livingworld/state.ts produces src/routes/party.ts.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "tsconfig.build.json.cgrf.yaml",
+      "target": "tsconfig.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "tsconfig.build.json.cgrf.yaml depends_on tsconfig.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "tsconfig.build.json.cgrf.yaml",
+      "target": "tsconfig.build.json",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": "tsconfig.build.json.cgrf.yaml gates tsconfig.build.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    }
+  ],
+  "type_c": [
+    {
+      "type": "C",
+      "event_type": "failure",
+      "file_path": "package-lock.json",
+      "description": "Registry metadata unavailable offline. Lock-only placeholder output rejected. One historical API entry restored; complete lockfile resolution remains blocked.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-BUILD-writers",
+      "timestamp": "2026-10-20T18:01:40.285785+00:00",
+      "commit_sha": null,
+      "smoke_result": null
+    },
+    {
+      "type": "C",
+      "event_type": "test_pass",
+      "file_path": ".github/workflows/provenance.yml",
+      "description": "Five supplementary static groups pass, including negative/positive packaging fixtures; no real build or hosted signing occurred.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-BUILD-writers",
+      "timestamp": "2026-10-20T18:01:40.285785+00:00",
+      "commit_sha": null,
+      "smoke_result": "5/5 static"
+    },
+    {
+      "type": "C",
+      "event_type": "smoke_run",
+      "file_path": "package.json",
+      "description": "All requested commands attempted: npm ci blocked by cache miss; lint by missing local packages; typecheck/test/build by absent executables.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-BUILD-writers",
+      "timestamp": "2026-10-20T18:01:40.285785+00:00",
+      "commit_sha": null,
+      "smoke_result": "0/5"
+    },
+    {
+      "type": "C",
+      "event_type": "failure",
+      "file_path": ".bits/out/DISP-BUILD-writers/report.md",
+      "description": "PR metadata remains bound to the merged governance session branch despite requesting the new build branch. No new PR or push performed; separate publication session is required.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-BUILD-writers",
+      "timestamp": "2026-10-20T18:03:49.721172+00:00",
+      "commit_sha": null,
+      "smoke_result": null
+    }
+  ],
+  "summary": {
+    "type_a_count": 20,
+    "type_b_count": 43,
+    "type_c_count": 4,
+    "ioo_compliance": true,
+    "dkg_orphans": 0,
+    "dispatch_id": "DISP-BUILD-writers",
+    "srs_codes": [
+      "SRS-CN-WRITERS-BUILD-001"
+    ],
+    "seat": "BITS-CODEGEN"
+  }
+}

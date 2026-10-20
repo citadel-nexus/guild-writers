@@ -61,6 +61,7 @@ function normalizeQuest(change: QuestChange): PublicQuest | null {
   }
 
   const title = change.title
+    // eslint-disable-next-line no-control-regex -- Strip control characters from public quest titles.
     .replace(/[\u0000-\u001F\u007F]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim()

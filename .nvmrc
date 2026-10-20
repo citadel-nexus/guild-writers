@@ -1,0 +1,18 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        .nvmrc
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-WRITERS-BUILD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-BUILD-writers
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-10-20
+# Depends:     none
+# EnumType:    ConfigDoc
+# EnumEdges:   GATES package.json; GATES .github/workflows/ci.yml
+# DAG Node:    none
+# Intent:      Use the same supported Node runtime locally and in every build job.
+# ───────────────────────────────────────────────────────────────
+
+24.13.0
