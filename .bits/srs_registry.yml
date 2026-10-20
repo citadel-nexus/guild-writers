@@ -23,3 +23,23 @@ SRS-CN-WRITERS-AUTOMATION-001:
   notes: >
     Enable Datadog CI Visibility, fix service catalog entry, document PostHog
     environment variables, and add CODEOWNERS for PR review automation.
+
+SRS-CN-WRITERS-GOVERNANCE-001:
+  status: in_progress
+  phase: "Writers Guild ownership governance and signed build provenance"
+  dispatch: DISP-GOVERNANCE-writers
+  cks_gate: "B+/75"
+  caps_minimum: pending
+  paths:
+    - .github/CODEOWNERS
+    - GOVERNANCE.md
+    - .github/workflows/provenance.yml
+    - .bits/srs_registry.yml
+    - .bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md
+    - .bits/queue/DISP-GOVERNANCE-writers.md
+    - .bits/out/DISP-GOVERNANCE-writers/
+  notes: >
+    Operator-authorized staging governance bootstrap. Establish ownership,
+    approval and escalation rules, document default-branch protections, and
+    produce verifiable signed SLSA build provenance without deployment or
+    changing GitHub settings. Existing SRS entries remain unchanged.

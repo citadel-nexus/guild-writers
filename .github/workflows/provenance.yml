@@ -1,0 +1,91 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        .github/workflows/provenance.yml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-WRITERS-GOVERNANCE-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-GOVERNANCE-writers
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-10-20
+# Depends:     package.json, package-lock.json
+# EnumType:    Workflow
+# EnumEdges:   DEPENDS_ON package.json; DEPENDS_ON package-lock.json; PRODUCES writers-build; PRODUCES writers-provenance
+# DAG Node:    none
+# Intent:      Bind compiled Writers Guild artifacts to verified builds using keyless signed provenance.
+# ───────────────────────────────────────────────────────────────
+
+name: Writers build provenance
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  provenance-build:
+    name: Provenance build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build
+      - name: Package compiled application
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p artifacts
+          tar -czf "artifacts/writers-${GITHUB_SHA}.tar.gz" dist/src package.json package-lock.json LICENSE
+          (cd artifacts && sha256sum "writers-${GITHUB_SHA}.tar.gz" > SHA256SUMS)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: writers-build-${{ github.sha }}
+          path: artifacts/
+          if-no-files-found: error
+          retention-days: 30
+
+  attest:
+    name: Sign build provenance
+    needs: provenance-build
+    if: >-
+      github.repository == 'citadel-nexus/guild-writers' &&
+      github.ref == 'refs/heads/main' &&
+      (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    steps:
+      # Consume only the immutable artifact from this run; never execute its contents.
+      - uses: actions/download-artifact@v4
+        with:
+          name: writers-build-${{ github.sha }}
+          path: artifacts
+      - name: Attest artifact digest with GitHub OIDC
+        id: attest
+        uses: actions/attest-build-provenance@v3
+        with:
+          subject-path: artifacts/writers-${{ github.sha }}.tar.gz
+      - name: Preserve the signed Sigstore bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: writers-provenance-${{ github.sha }}
+          path: ${{ steps.attest.outputs.bundle-path }}
+          if-no-files-found: error
+          retention-days: 30

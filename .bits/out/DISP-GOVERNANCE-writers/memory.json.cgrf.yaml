@@ -1,0 +1,19 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        .bits/out/DISP-GOVERNANCE-writers/memory.json.cgrf.yaml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-WRITERS-GOVERNANCE-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-GOVERNANCE-writers
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-10-20
+# Depends:     .bits/out/DISP-GOVERNANCE-writers/memory.json
+# EnumType:    ConfigDoc
+# EnumEdges:   DEPENDS_ON .bits/out/DISP-GOVERNANCE-writers/memory.json; PRODUCES .bits/out/DISP-GOVERNANCE-writers/memory.json
+# DAG Node:    none
+# Intent:      Provide governance and relationship metadata for the JSON memory payload.
+# ───────────────────────────────────────────────────────────────
+
+payload: memory.json
+format: three-type-memory

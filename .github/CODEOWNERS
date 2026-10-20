@@ -1,18 +1,23 @@
-# ─── CGRF Header ──────────────────────────────
+# ─── CGRF Header ───────────────────────────────────────────────
 # File:        .github/CODEOWNERS
 # Stage:       11_COMMIT
-# SRS:         SRS-CN-WRITERS-AUTOMATION-001
+# SRS:         SRS-CN-WRITERS-GOVERNANCE-001
 # CAPS:        pending
 # CK:          pending
-# Dispatch:    DISP-AUTOMATION-writers
+# Dispatch:    DISP-GOVERNANCE-writers
 # Seat:        BITS-CODEGEN
 # Owner:       Citadel Nexus Inc.
-# Created:     2026-09-25
-# Depends:     none
+# Created:     2026-10-20
+# Depends:     GOVERNANCE.md
 # EnumType:    ConfigDoc
-# EnumEdges:   OWNS *
-# DAG Node:    writers.github.codeowners
-# Intent:      Route Writers Guild changes to the guild team for review.
-# ───────────────────────────────────────────────
+# EnumEdges:   OWNS *; DEPENDS_ON GOVERNANCE.md
+# DAG Node:    none
+# Intent:      Route review to the operator-confirmed guildmaster team under guildmaster Quill.
+# ───────────────────────────────────────────────────────────────
 
-* @citadel-nexus/writers-guild
+# Accountable guildmaster: Quill (GitLab user: quill).
+# Operator-confirmed guildmaster owner team: @citadel-nexus/guild-writers.
+# Quill automation identity: GitHub App quill-writers-guildmaster.
+# GitHub Apps cannot be code owners; the team supplies code-owner reviews.
+# The team must be visible with explicit repository write access (see GOVERNANCE.md).
+* @citadel-nexus/guild-writers
