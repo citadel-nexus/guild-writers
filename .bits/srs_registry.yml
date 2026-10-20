@@ -43,3 +43,27 @@ SRS-CN-WRITERS-GOVERNANCE-001:
     approval and escalation rules, document default-branch protections, and
     produce verifiable signed SLSA build provenance without deployment or
     changing GitHub settings. Existing SRS entries remain unchanged.
+
+SRS-CN-WRITERS-BUILD-001:
+  status: in_progress
+  phase: "Writers Guild reproducible build and CI repair"
+  dispatch: DISP-BUILD-writers
+  cks_gate: "B+/75"
+  caps_minimum: pending
+  paths:
+    - package.json
+    - package-lock.json
+    - .nvmrc
+    - tsconfig*.json
+    - eslint.config.*
+    - src/
+    - test/
+    - .github/workflows/
+    - docker/Dockerfile
+    - .bits/srs/SRS-CN-WRITERS-BUILD-001.md
+    - .bits/queue/DISP-BUILD-writers.md
+    - .bits/out/DISP-BUILD-writers/
+  notes: >
+    Operator-authorized staging build repair, separate from merged governance
+    PR 20. Preserve tests and security scanning; no production, deployment,
+    secrets or GitHub settings changes.

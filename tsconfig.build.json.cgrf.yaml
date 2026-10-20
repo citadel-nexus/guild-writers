@@ -1,0 +1,18 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        tsconfig.build.json.cgrf.yaml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-WRITERS-BUILD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-BUILD-writers
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-10-20
+# Depends:     tsconfig.json
+# EnumType:    ConfigDoc
+# EnumEdges:   DEPENDS_ON tsconfig.json; GATES tsconfig.build.json
+# DAG Node:    none
+# Intent:      Emit only the production TypeScript graph and fail before producing invalid output.
+# ───────────────────────────────────────────────────────────────
+
+payload: tsconfig.build.json

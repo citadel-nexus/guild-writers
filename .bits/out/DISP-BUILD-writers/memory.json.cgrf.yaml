@@ -1,0 +1,18 @@
+# ─── CGRF Header ───────────────────────────────────────────────
+# File:        .bits/out/DISP-BUILD-writers/memory.json.cgrf.yaml
+# Stage:       11_COMMIT
+# SRS:         SRS-CN-WRITERS-BUILD-001
+# CAPS:        pending
+# CK:          pending
+# Dispatch:    DISP-BUILD-writers
+# Seat:        BITS-CODEGEN
+# Owner:       Citadel Nexus Inc.
+# Created:     2026-10-20
+# Depends:     .bits/out/DISP-BUILD-writers/memory.json
+# EnumType:    ConfigDoc
+# EnumEdges:   DEPENDS_ON .bits/out/DISP-BUILD-writers/memory.json; GATES .bits/out/DISP-BUILD-writers/memory.json
+# DAG Node:    none
+# Intent:      Provide governance metadata for the build-repair memory payload.
+# ───────────────────────────────────────────────────────────────
+
+payload: memory.json
