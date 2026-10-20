@@ -1,0 +1,556 @@
+{
+  "type_a": [
+    {
+      "type": "A",
+      "file_path": ".bits/srs_registry.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [],
+      "lines": 45,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Register the operator-authorized governance SRS without changing existing work authorizations.",
+      "objective_id": "DISP-GOVERNANCE-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-GOVERNANCE-001",
+        "governance",
+        "signed-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md",
+      "cket_stage": "04_HYPOTHESIZE",
+      "srs_codes": [
+        "SRS-CN-WRITERS-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/srs_registry.yml"
+      ],
+      "lines": 63,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Bound operator-authorized Writers Guild governance and signed provenance work.",
+      "objective_id": "DISP-GOVERNANCE-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-GOVERNANCE-001",
+        "governance",
+        "signed-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/queue/DISP-GOVERNANCE-writers.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md"
+      ],
+      "lines": 76,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Record operator authority and reviewable acceptance gates for this staging bootstrap.",
+      "objective_id": "DISP-GOVERNANCE-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-GOVERNANCE-001",
+        "governance",
+        "signed-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".github/CODEOWNERS",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        "GOVERNANCE.md"
+      ],
+      "lines": 23,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Route review to the existing guild team under accountable guildmaster Quill.",
+      "objective_id": "DISP-GOVERNANCE-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-GOVERNANCE-001",
+        "governance",
+        "signed-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": "GOVERNANCE.md",
+      "cket_stage": "06_PLAN",
+      "srs_codes": [
+        "SRS-CN-WRITERS-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".github/CODEOWNERS",
+        ".github/workflows/provenance.yml",
+        ".bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md"
+      ],
+      "lines": 188,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Make Writers Guild accountability and artifact trust requirements explicit for maintainers.",
+      "objective_id": "DISP-GOVERNANCE-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-GOVERNANCE-001",
+        "governance",
+        "signed-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".github/workflows/provenance.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-GOVERNANCE-001"
+      ],
+      "enum_type": "Workflow",
+      "functions": [],
+      "dependencies": [
+        "package.json",
+        "package-lock.json"
+      ],
+      "lines": 91,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Bind compiled Writers Guild artifacts to verified builds using keyless signed provenance.",
+      "objective_id": "DISP-GOVERNANCE-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-GOVERNANCE-001",
+        "governance",
+        "signed-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-GOVERNANCE-writers/report.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-GOVERNANCE-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".bits/queue/DISP-GOVERNANCE-writers.md"
+      ],
+      "lines": 209,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Preserve reproducible checks and unresolved prerequisites for governance review.",
+      "objective_id": "DISP-GOVERNANCE-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-GOVERNANCE-001",
+        "governance",
+        "signed-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-GOVERNANCE-writers/memory.json",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-GOVERNANCE-001"
+      ],
+      "enum_type": "Schema",
+      "functions": [],
+      "dependencies": [],
+      "lines": 556,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Preserve file relationships and actual validation outcomes for later authorized memory ingestion.",
+      "objective_id": "DISP-GOVERNANCE-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-GOVERNANCE-001",
+        "governance",
+        "signed-provenance"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".bits/out/DISP-GOVERNANCE-writers/memory.json.cgrf.yaml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-GOVERNANCE-001"
+      ],
+      "enum_type": "ConfigDoc",
+      "functions": [],
+      "dependencies": [
+        ".bits/out/DISP-GOVERNANCE-writers/memory.json"
+      ],
+      "lines": 19,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Provide governance and relationship metadata for the JSON memory payload.",
+      "objective_id": "DISP-GOVERNANCE-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-GOVERNANCE-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-GOVERNANCE-001",
+        "governance",
+        "signed-provenance"
+      ],
+      "tenant_id": null
+    }
+  ],
+  "type_b": [
+    {
+      "type": "B",
+      "source": ".bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md",
+      "target": ".bits/srs_registry.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md depends_on .bits/srs_registry.yml.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md",
+      "target": ".github/workflows/provenance.yml",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md gates .github/workflows/provenance.yml.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md",
+      "target": "GOVERNANCE.md",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md gates GOVERNANCE.md.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/queue/DISP-GOVERNANCE-writers.md",
+      "target": ".bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/queue/DISP-GOVERNANCE-writers.md depends_on .bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/queue/DISP-GOVERNANCE-writers.md",
+      "target": "GOVERNANCE.md",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".bits/queue/DISP-GOVERNANCE-writers.md gates GOVERNANCE.md.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/queue/DISP-GOVERNANCE-writers.md",
+      "target": ".github/workflows/provenance.yml",
+      "edge_type": "GATES",
+      "weight": 1.0,
+      "description": ".bits/queue/DISP-GOVERNANCE-writers.md gates .github/workflows/provenance.yml.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/CODEOWNERS",
+      "target": "*",
+      "edge_type": "OWNS",
+      "weight": 1.0,
+      "description": ".github/CODEOWNERS owns *.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/CODEOWNERS",
+      "target": "GOVERNANCE.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/CODEOWNERS depends_on GOVERNANCE.md.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "GOVERNANCE.md",
+      "target": ".github/CODEOWNERS",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "GOVERNANCE.md depends_on .github/CODEOWNERS.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "GOVERNANCE.md",
+      "target": ".github/workflows/provenance.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "GOVERNANCE.md depends_on .github/workflows/provenance.yml.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": "GOVERNANCE.md",
+      "target": ".bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": "GOVERNANCE.md depends_on .bits/srs/SRS-CN-WRITERS-GOVERNANCE-001.md.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/provenance.yml",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/provenance.yml depends_on package.json.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/provenance.yml",
+      "target": "package-lock.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/provenance.yml depends_on package-lock.json.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/provenance.yml",
+      "target": "writers-build",
+      "edge_type": "PRODUCES",
+      "weight": 1.0,
+      "description": ".github/workflows/provenance.yml produces writers-build.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/provenance.yml",
+      "target": "writers-provenance",
+      "edge_type": "PRODUCES",
+      "weight": 1.0,
+      "description": ".github/workflows/provenance.yml produces writers-provenance.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-GOVERNANCE-writers/report.md",
+      "target": ".bits/queue/DISP-GOVERNANCE-writers.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-GOVERNANCE-writers/report.md depends_on .bits/queue/DISP-GOVERNANCE-writers.md.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-GOVERNANCE-writers/report.md",
+      "target": ".github/workflows/provenance.yml",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-GOVERNANCE-writers/report.md validates .github/workflows/provenance.yml.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-GOVERNANCE-writers/report.md",
+      "target": "GOVERNANCE.md",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-GOVERNANCE-writers/report.md validates GOVERNANCE.md.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-GOVERNANCE-writers/report.md",
+      "target": ".bits/out/DISP-GOVERNANCE-writers/memory.json",
+      "edge_type": "PRODUCES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-GOVERNANCE-writers/report.md produces .bits/out/DISP-GOVERNANCE-writers/memory.json.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-GOVERNANCE-writers/memory.json.cgrf.yaml",
+      "target": ".bits/out/DISP-GOVERNANCE-writers/memory.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-GOVERNANCE-writers/memory.json.cgrf.yaml depends_on .bits/out/DISP-GOVERNANCE-writers/memory.json.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-GOVERNANCE-writers/memory.json.cgrf.yaml",
+      "target": ".bits/out/DISP-GOVERNANCE-writers/memory.json",
+      "edge_type": "PRODUCES",
+      "weight": 1.0,
+      "description": "The CGRF sidecar supplies the JSON memory payload envelope.",
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "created_by": "BITS-CODEGEN"
+    }
+  ],
+  "type_c": [
+    {
+      "type": "C",
+      "event_type": "test_pass",
+      "file_path": ".github/workflows/provenance.yml",
+      "description": "Four supplementary static suites passed, including 64 signing-gate cases, fixture archive exclusions and checksum tamper rejection; no hosted attestation was generated.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "timestamp": "2026-10-20T17:33:58.591338+00:00",
+      "commit_sha": null,
+      "smoke_result": "4/4 static"
+    },
+    {
+      "type": "C",
+      "event_type": "failure",
+      "file_path": "package-lock.json",
+      "description": "Offline npm installation failed with EUSAGE missing lockfile peers; retry with legacy peer handling also failed. No dependency fix applied.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "timestamp": "2026-10-20T17:33:58.591338+00:00",
+      "commit_sha": null,
+      "smoke_result": null
+    },
+    {
+      "type": "C",
+      "event_type": "smoke_run",
+      "file_path": ".bits/out/DISP-GOVERNANCE-writers/report.md",
+      "description": "Dispatch smoke partially executed: registry check passes; lint/test/build fail because dependencies are absent; real archive checks blocked.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-GOVERNANCE-writers",
+      "timestamp": "2026-10-20T17:33:58.591338+00:00",
+      "commit_sha": null,
+      "smoke_result": "1/6"
+    }
+  ],
+  "summary": {
+    "type_a_count": 9,
+    "type_b_count": 21,
+    "type_c_count": 3,
+    "ioo_compliance": true,
+    "dkg_orphans": 0,
+    "dispatch_id": "DISP-GOVERNANCE-writers",
+    "srs_codes": [
+      "SRS-CN-WRITERS-GOVERNANCE-001"
+    ],
+    "seat": "BITS-CODEGEN"
+  }
+}
