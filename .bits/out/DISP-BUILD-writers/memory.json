@@ -10,7 +10,7 @@
       "enum_type": "ConfigDoc",
       "functions": [],
       "dependencies": [],
-      "lines": 1101,
+      "lines": 1296,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Repair and record the Writers Guild build contract in .bits/out/DISP-BUILD-writers/memory.json under the authorized staging dispatch.",
@@ -73,10 +73,10 @@
         ".bits/queue/DISP-BUILD-writers.md",
         ".bits/out/DISP-BUILD-writers/memory.json.cgrf.yaml"
       ],
-      "lines": 273,
+      "lines": 307,
       "caps_grade": "pending",
       "ck_stamp": "pending",
-      "intent_statement": "Preserve build-repair evidence and explicit blockers before review.",
+      "intent_statement": "Preserve current build continuation evidence and hosted validation limits.",
       "objective_id": "DISP-BUILD-writers",
       "outcome": "partial",
       "supersedes": false,
@@ -104,7 +104,7 @@
       "dependencies": [
         ".bits/srs/SRS-CN-WRITERS-BUILD-001.md"
       ],
-      "lines": 63,
+      "lines": 72,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Record build-repair authority and measurable validation gates.",
@@ -135,7 +135,7 @@
       "dependencies": [
         ".bits/srs_registry.yml"
       ],
-      "lines": 49,
+      "lines": 63,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Bound the operator-authorized build repair to reproducible validation and CI.",
@@ -164,10 +164,43 @@
       "enum_type": "ConfigDoc",
       "functions": [],
       "dependencies": [],
-      "lines": 69,
+      "lines": 70,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Repair and record the Writers Guild build contract in .bits/srs_registry.yml under the authorized staging dispatch.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
+      "file_path": ".github/BUILD.md",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "Doc",
+      "functions": [],
+      "dependencies": [
+        ".github/workflows/lockfile-refresh.yml",
+        ".github/workflows/provenance.yml",
+        ".nvmrc"
+      ],
+      "lines": 130,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Explain the manual lockfile repair and verified artifact flow with admin prerequisites.",
       "objective_id": "DISP-BUILD-writers",
       "outcome": "partial",
       "supersedes": false,
@@ -214,6 +247,39 @@
     },
     {
       "type": "A",
+      "file_path": ".github/workflows/lockfile-refresh.yml",
+      "cket_stage": "11_COMMIT",
+      "srs_codes": [
+        "SRS-CN-WRITERS-BUILD-001"
+      ],
+      "enum_type": "Workflow",
+      "functions": [],
+      "dependencies": [
+        ".nvmrc",
+        "package.json",
+        ".github/BUILD.md"
+      ],
+      "lines": 179,
+      "caps_grade": "pending",
+      "ck_stamp": "pending",
+      "intent_statement": "Generate and validate a registry-resolved lockfile before proposing it for review.",
+      "objective_id": "DISP-BUILD-writers",
+      "outcome": "partial",
+      "supersedes": false,
+      "dispatch_id": "DISP-BUILD-writers",
+      "seat": "BITS-CODEGEN",
+      "domain": "engineering",
+      "source_type": "seat_dispatch",
+      "tags": [
+        "DISP-BUILD-writers",
+        "BITS-CODEGEN",
+        "SRS-CN-WRITERS-BUILD-001",
+        "build-repair"
+      ],
+      "tenant_id": null
+    },
+    {
+      "type": "A",
       "file_path": ".github/workflows/provenance.yml",
       "cket_stage": "11_COMMIT",
       "srs_codes": [
@@ -225,7 +291,7 @@
         "package.json",
         "package-lock.json"
       ],
-      "lines": 96,
+      "lines": 127,
       "caps_grade": "pending",
       "ck_stamp": "pending",
       "intent_statement": "Bind compiled Writers Guild artifacts to verified builds using keyless signed provenance.",
@@ -664,10 +730,30 @@
     {
       "type": "B",
       "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": ".github/BUILD.md",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates .github/BUILD.md.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
       "target": ".github/workflows/ci.yml",
       "edge_type": "VALIDATES",
       "weight": 1.0,
       "description": ".bits/out/DISP-BUILD-writers/report.md validates .github/workflows/ci.yml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".bits/out/DISP-BUILD-writers/report.md",
+      "target": ".github/workflows/lockfile-refresh.yml",
+      "edge_type": "VALIDATES",
+      "weight": 1.0,
+      "description": ".bits/out/DISP-BUILD-writers/report.md validates .github/workflows/lockfile-refresh.yml.",
       "dispatch_id": "DISP-BUILD-writers",
       "created_by": "BITS-CODEGEN"
     },
@@ -868,6 +954,76 @@
       "edge_type": "GATES",
       "weight": 1.0,
       "description": ".bits/srs/SRS-CN-WRITERS-BUILD-001.md gates .github/workflows/ci.yml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/BUILD.md",
+      "target": ".github/workflows/lockfile-refresh.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/BUILD.md depends_on .github/workflows/lockfile-refresh.yml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/BUILD.md",
+      "target": ".github/workflows/provenance.yml",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/BUILD.md depends_on .github/workflows/provenance.yml.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/BUILD.md",
+      "target": ".nvmrc",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/BUILD.md depends_on .nvmrc.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/lockfile-refresh.yml",
+      "target": ".nvmrc",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/lockfile-refresh.yml depends_on .nvmrc.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/lockfile-refresh.yml",
+      "target": "package.json",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/lockfile-refresh.yml depends_on package.json.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/lockfile-refresh.yml",
+      "target": ".github/BUILD.md",
+      "edge_type": "DEPENDS_ON",
+      "weight": 1.0,
+      "description": ".github/workflows/lockfile-refresh.yml depends_on .github/BUILD.md.",
+      "dispatch_id": "DISP-BUILD-writers",
+      "created_by": "BITS-CODEGEN"
+    },
+    {
+      "type": "B",
+      "source": ".github/workflows/lockfile-refresh.yml",
+      "target": "bits/lockfile-refresh",
+      "edge_type": "PRODUCES",
+      "weight": 1.0,
+      "description": ".github/workflows/lockfile-refresh.yml produces bits/lockfile-refresh.",
       "dispatch_id": "DISP-BUILD-writers",
       "created_by": "BITS-CODEGEN"
     },
@@ -1084,12 +1240,51 @@
       "timestamp": "2026-10-20T18:03:49.721172+00:00",
       "commit_sha": null,
       "smoke_result": null
+    },
+    {
+      "type": "C",
+      "event_type": "test_pass",
+      "file_path": ".github/workflows/lockfile-refresh.yml",
+      "description": "Five static/control-flow groups passed, including mocked PR/signature guards and attestation acceptance failure cases. No real GitHub writes or hosted signature validation performed.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-BUILD-writers",
+      "timestamp": "2026-10-20T18:21:09.469603+00:00",
+      "commit_sha": null,
+      "smoke_result": "5/5 static"
+    },
+    {
+      "type": "C",
+      "event_type": "smoke_run",
+      "file_path": "package.json",
+      "description": "Rerun: npm ci offline exits 1 ENOTCACHED @eslint/js; lint exits 2 missing module; typecheck/test/build exit 127 missing tsc/vitest.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-BUILD-writers",
+      "timestamp": "2026-10-20T18:21:09.469603+00:00",
+      "commit_sha": null,
+      "smoke_result": "0/5"
+    },
+    {
+      "type": "C",
+      "event_type": "test_pass",
+      "file_path": ".bits/out/DISP-BUILD-writers/report.md",
+      "description": "PR 21 is merged. Bound branch rebased onto current main cceb26e without rewriting published history. Earlier metadata-based publishing impossibility inference corrected; external UI creation remains pending.",
+      "caps_before": null,
+      "caps_after": null,
+      "dag_impact": null,
+      "dispatch_id": "DISP-BUILD-writers",
+      "timestamp": "2026-10-20T18:21:09.469603+00:00",
+      "commit_sha": null,
+      "smoke_result": null
     }
   ],
   "summary": {
-    "type_a_count": 20,
-    "type_b_count": 43,
-    "type_c_count": 4,
+    "type_a_count": 22,
+    "type_b_count": 52,
+    "type_c_count": 7,
     "ioo_compliance": true,
     "dkg_orphans": 0,
     "dispatch_id": "DISP-BUILD-writers",

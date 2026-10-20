@@ -23,8 +23,8 @@ status: in_progress
 SRS: SRS-CN-WRITERS-BUILD-001
 Seat: BITS-CODEGEN
 Mode: staging
-Branch: bits/SRS-CN-WRITERS-BUILD-001-build-repair
-Base: origin/main at f7e5fd61c1f03959599f29c94d493c552b3d5365 (merged governance PR 20)
+Branch: dd/bits/SRS-CN-WRITERS-GOVERNANCE-001-signed-provenance (bound publishing branch; operator-directed continuation)
+Base: origin/main at cceb26ebdbe8066e80c4e745d4b56da515735d56 (merged build PR 21)
 
 ## Authorization source
 
@@ -61,3 +61,12 @@ peer metadata and tsc/vitest were unavailable. Its governance and provenance
 changes are merged in PR 20 and must not be reintroduced in this build-repair PR.
 Operator confirmed ownership team @citadel-nexus/guild-writers and automation app
 quill-writers-guildmaster. Preserve that mapping.
+
+## Continuation authorization
+
+The current operator directive explicitly authorizes a dispatch-only lockfile
+refresh workflow that creates bits/lockfile-refresh and a PR after successful
+validation, immediate positive/negative attestation verification, BUILD.md admin
+instructions, and updating the bound publishing branch onto current main.
+No workflow is dispatched, registry credential created, setting changed or ref
+published by the coding session itself. Earlier build work is already merged.
